@@ -11,6 +11,7 @@ flask-marshmallow = "*"
 marshmallow-sqlalchemy = "*"
 jwt = "*"
 marshmallow = "*"
+flask-bcrypt = "*"
 
 [dev-packages]
 
