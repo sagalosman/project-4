@@ -7,5 +7,3 @@ class Age(db.Model, BaseModel):
 
   age = db.Column(db.String(10), unique=True, nullable=True)
 
-
-
