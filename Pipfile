@@ -1,18 +1,17 @@
 [[source]]
-name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-
-[dev-packages]
+name = "pypi"
 
 [packages]
-flask = "*"
 flask-sqlalchemy = "*"
+psycopg2-binary = "*"
 flask-marshmallow = "*"
 marshmallow-sqlalchemy = "*"
-psycopg2-binary = "*"
-flask-bcrypt = "*"
-pyjwt = "*"
+flask = "*"
+
+[dev-packages]
+pylint = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.9"
