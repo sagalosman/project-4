@@ -1,5 +1,7 @@
 from app import db
 from models.base import BaseModel
+from models.book_age import books_ages_join
+from models.age import Age
 
 class Book(db.Model, BaseModel):
 
@@ -10,3 +12,4 @@ class Book(db.Model, BaseModel):
   description = db.Column(db.Text, nullable=False)
   image = db.Column(db.String(600), nullable=False, unique=True)
 
+  ages = db.relationship('Age', secondary=books_ages_join, backref='books')
