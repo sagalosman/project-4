@@ -7,17 +7,11 @@ name = "pypi"
 flask-sqlalchemy = "*"
 psycopg2-binary = "*"
 flask-marshmallow = "*"
-<<<<<<< HEAD
-flask = "*"
-
-[dev-packages]
-=======
 marshmallow-sqlalchemy = "*"
 flask = "*"
 
 [dev-packages]
 pylint = "*"
->>>>>>> development
 
 [requires]
 python_version = "3.9"
