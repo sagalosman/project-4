@@ -1,1 +1,1 @@
-db_URI = 'postgres://localhost:5432/teas_db'
+db_URI = 'postgres://localhost:5432/books_db'
