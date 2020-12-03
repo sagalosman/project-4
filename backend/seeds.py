@@ -2,6 +2,8 @@
 from app import app, db
 from models.book import Book
 from models.age import Age
+from models.comment import Comment 
+
 with app.app_context():
 
   db.drop_all()
@@ -43,7 +45,16 @@ with app.app_context():
     image= 'tbc2'
   )
 
+  print('Books created')
 
+  comment1 = Comment(
+    content = 'This book is fun to read, My little ones love it',
+    book=cat_in_the_hat
+  )
+
+  print('Comment created')
+  
+  print('Adding to database')
 
   db.session.add(cat_in_the_hat)
   db.session.add(charlie_and_the_chocolate_factory)
@@ -51,3 +62,6 @@ with app.app_context():
   db.session.add(harry_potter_stone)
   db.session.add(age_5)
   db.session.commit()
+
+
+  print('Completed')

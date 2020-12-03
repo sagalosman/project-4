@@ -14,6 +14,6 @@ db = SQLAlchemy(app)
 
 ma = Marshmallow(app)
 
-# from controllers import books
-# app.register_blueprint(books.router, url_prefix="/api")
+from controllers import books
+app.register_blueprint(books.router, url_prefix="/api")
 
