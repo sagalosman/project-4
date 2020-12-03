@@ -4,14 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-flask-sqlalchemy = "*"
-psycopg2-binary = "*"
-flask-marshmallow = "*"
-marshmallow-sqlalchemy = "*"
-flask = "*"
 
 [dev-packages]
-pylint = "*"
 
 [requires]
 python_version = "3.9"
