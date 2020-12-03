@@ -3,10 +3,21 @@ from app import app, db
 from models.book import Book
 from models.age import Age
 from models.genre import Genre
+from models.user import User
+
+
 with app.app_context():
 
   db.drop_all()
   db.create_all()
+
+  sagal = User(
+    username="sagal",
+    email="sagal@sagal.com",
+    password="sagal"
+  )
+
+  sagal.save()
 
   age_1 = Age(age='0-1')
   age_2 = Age(age='1-2')
