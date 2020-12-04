@@ -6,6 +6,8 @@ from models.genre import Genre
 from serializers.book import BookSchema
 from serializers.comment import CommentSchema
 from serializers.age import AgeSchema
+# from serializers.genre import GenreSchema 
+from middleware.secure_route import secure_route
 from serializers.genre import GenreSchema 
 from marshmallow import ValidationError
 
@@ -29,6 +31,13 @@ def index():
   return book_schema.jsonify(books, many=True), 200
 
 
+# ! Delete The Books
+# @router.route('/books/<int:id>', methods=['DELETE'])
+# def remove(id):
+#   book = Book.query.get(id)
+
+#   book.remove()
+#   return { 'message': f'Book {id}--deleted successfully' }
 # GET a single book
 @router.route('/books/<int:id>', methods=['GET'])
 def get_single_book(id):

@@ -1,8 +1,8 @@
 from app import db, bcrypt
 from models.base import BaseModel
 from sqlalchemy.ext.hybrid import hybrid_property
-
 from datetime import *
+from environment.config import secret
 
 import jwt
 
@@ -35,7 +35,7 @@ class User(db.Model, BaseModel):
     
     token = jwt.encode(
       payload,
-      'This is our secret code',
+      secret,
       'HS256'
     ).decode('utf-8')
 
