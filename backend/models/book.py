@@ -12,7 +12,7 @@ class Book(db.Model, BaseModel):
   title = db.Column(db.String(40), nullable=False, unique=True)
   author = db.Column(db.String(40), nullable=False)
   description = db.Column(db.Text, nullable=False)
-  image = db.Column(db.String(600), nullable=False, unique=True)
+  image = db.Column(db.String(600), nullable=True, unique=True)
 
   ages = db.relationship('Age', secondary=books_ages_join, backref='books')
   genres = db.relationship('Genre', secondary=books_genres_join, backref='books')
