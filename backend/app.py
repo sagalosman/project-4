@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from controllers import users
 from flask_bcrypt import Bcrypt
-from models.user import User
+# from models.user import User
 
 
 app = Flask(__name__)
