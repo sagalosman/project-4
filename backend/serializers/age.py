@@ -10,5 +10,5 @@ class AgeSchema(ma.SQLAlchemyAutoSchema, BaseSchema):
     model = Age
     load_instance = True
 
-  books = fields.Nested('BookSchema', many=True)
+  # books = fields.Nested('BookSchema', many=True)
 
