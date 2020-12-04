@@ -13,6 +13,7 @@ jwt = "*"
 marshmallow = "*"
 pyjwt = "*"
 bcrypt = "*"
+flask-bcrypt = "*"
 
 [dev-packages]
 
