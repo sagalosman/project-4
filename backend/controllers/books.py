@@ -55,15 +55,7 @@ def create():
   book.save()
 
   return book_schema.jsonify(book), 200
-# ! JUST HERE TO TEST - JB
-@router.route('/books/<int:id>', methods=['GET'])
-def get_single_book(id):
-  book = Book.query.get(id)
 
-  if not book:
-    return { 'message': 'Book not available' }, 404
-
-  return book_schema.jsonify(book), 200
 
 # Create a new comment - Not Working!
 @router.route('/books/<int:book_id>/comments', methods=['POST'])
