@@ -14,16 +14,16 @@ def signup():
   return user_schema.jsonify(user), 200
 
 
-# @router.route('/login', methods=['POST'])
-# def login():
-#   data = request.get_json()
-#   user = User.query.filter_by(email=data['email']).first()
-#   if not user:
-#     return { 'message': 'No user found with this email.' }, 200
+@router.route('/login', methods=['POST'])
+def login():
+  data = request.get_json()
+  user = User.query.filter_by(email=data['email']).first()
+  if not user:
+    return { 'message': 'No user found with this email.' }, 200
 
-#   if not user.validate_password(data['password']):
-#     return { 'message': 'Unauthorized' }, 402
+  if not user.validate_password(data['password']):
+    return { 'message': 'Unauthorized' }, 402
 
-#   token = user.generate_token()
+  token = user.generate_token()
 
-#   return { 'token': token, 'message': 'Nice to see you again' }
+  return { 'token': token, 'message': 'Nice to see you again' }

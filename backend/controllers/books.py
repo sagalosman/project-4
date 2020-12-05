@@ -1,22 +1,26 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, g
 from models.book import Book
 from models.comment import Comment
-from models.age import Age
 from models.genre import Genre
 from serializers.book import BookSchema
+from serializers.populate_book import PopulateBookSchema
 from serializers.comment import CommentSchema
-from serializers.age import AgeSchema
-# from serializers.genre import GenreSchema 
-from middleware.secure_route import secure_route
 from serializers.genre import GenreSchema 
+from serializers.populate_genre import PopulateGenreSchema
+from middleware.secure_route import secure_route
 from marshmallow import ValidationError
 
 
 
 book_schema = BookSchema()
+populate_book = PopulateBookSchema()
 
 comment_schema = CommentSchema()
+
 genre_schema = GenreSchema()
+populate_genre = PopulateGenreSchema()
+
+
 
 router = Blueprint(__name__, 'books')
 
@@ -31,13 +35,6 @@ def index():
   return book_schema.jsonify(books, many=True), 200
 
 
-# ! Delete The Books
-# @router.route('/books/<int:id>', methods=['DELETE'])
-# def remove(id):
-#   book = Book.query.get(id)
-
-#   book.remove()
-#   return { 'message': f'Book {id}--deleted successfully' }
 # GET a single book
 @router.route('/books/<int:id>', methods=['GET'])
 def get_single_book(id):
@@ -47,12 +44,16 @@ def get_single_book(id):
   if not book:
     return { 'message': 'Book not found!' }, 404
 
-  return book_schema.jsonify(book), 200
+  return populate_book.jsonify(book), 200
 
 # CREATE a book
 @router.route('/books', methods=['POST'])
+# @secure_route
 def create():
   book_dictionary = request.get_json()
+
+  # This will provide the id of the current user posting the coffee
+  book_dictionary['user_id']= g.current_user.id
 
   try: 
     book = book_schema.load(book_dictionary)
@@ -62,13 +63,15 @@ def create():
   
   book.save()
 
-  return book_schema.jsonify(book), 200
+  return populate_book.jsonify(book), 200
 
 
 # UPDATE a book
 @router.route('/books/<int:id>', methods=['PUT'])
+# @secure_route
 def update_book(id):
   existing_book = Book.query.get(id)
+
   if not existing_book:
     return { 'message': 'Book not found!!'}, 404
 
@@ -82,6 +85,9 @@ def update_book(id):
   
   except ValidationError as e:
     return { 'errors': e.messages, 'message': 'Something went wrong!'}
+  
+  if book.user !=g.current_user:
+    return { 'message': 'Unauthorized' }, 401
 
   book.save()
 
@@ -92,15 +98,18 @@ def update_book(id):
 
 # DELETE a book
 @router.route('/books/<int:id>', methods=['DELETE'])
+# @secure_route
 def remove(id):
 
   book = Book.query.get(id)
 
   if not book:
     return { 'message': 'Book not found!' }, 404
+  
+  if book.user != g.current_user:
+    return { 'message': 'Unauthorized '}, 401
 
   book.remove()
-
   return { 'message': f'Book {id} ---deleted successfully '}, 200
 
 
@@ -132,9 +141,9 @@ def comment_create(book_id):
 
 # GET all genres
 
-# @router.route('/genres', methods=['GET'])
-# def get_genres():
+@router.route('/genres', methods=['GET'])
+def get_genres():
 
-#   all_genres = Genre.query.all()
+  all_genres = Genre.query.all()
 
-#   return genre_schema.jsonify(all_genres, many=True), 200
+  return genre_schema.jsonify(all_genres, many=True), 200
