@@ -84,10 +84,6 @@ def index():
 
   return book_schema.jsonify(books, many=True), 200
 
-<<<<<<< HEAD
-
-=======
->>>>>>> development
 # GET a single book
 @router.route('/books/<int:id>', methods=['GET'])
 def get_single_book(id):
