@@ -25,6 +25,56 @@ populate_genre = PopulateGenreSchema()
 router = Blueprint(__name__, 'books')
 
 
+# ! ROUTES FOR AGE
+
+# GET ALL AGES
+@router.route('/ages', methods=['GET'])
+def all_age():
+  ages = Age.query.all()
+
+  return age_schema.jsonify(ages, many=True), 200
+
+# GET a single age
+@router.route('/ages/<int:id>', methods=['GET'])
+def get_single_age(id):
+  
+  age = Age.query.get(id) 
+
+  if not age:
+    return { 'message': 'Age not found!' }, 404
+
+  return age_schema.jsonify(age), 200
+
+  # CREATE a Age 
+@router.route('/ages', methods=['POST'])
+def create_age():
+  age_dictionary = request.get_json()
+
+  try: 
+    age = age_schema.load(age_dictionary)
+  
+  except ValidationError as e:
+    return { 'errors': e.messages, 'message': 'Something went wrong!'}
+  
+  age.save()
+
+  return age_schema.jsonify(age), 200
+
+
+# DELETE a age
+@router.route('/ages/<int:id>', methods=['DELETE'])
+def remove_age(id):
+
+  age = Age.query.get(id)
+
+  if not age:
+    return { 'message': 'Age not found!' }, 404
+
+  age.remove()
+
+  return { 'message': f'Age {id} ---deleted successfully '}, 200
+
+
 # ! ROUTES FOR BOOKS
 
 # GET all books
@@ -34,7 +84,10 @@ def index():
 
   return book_schema.jsonify(books, many=True), 200
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> development
 # GET a single book
 @router.route('/books/<int:id>', methods=['GET'])
 def get_single_book(id):
