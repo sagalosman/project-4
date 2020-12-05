@@ -12,9 +12,10 @@ class Comment(db.Model, BaseModel):
   
   # ! This code in 1-M Relationships points to the ONE side
   book_id = db.Column(db.Integer, db.ForeignKey('books.id'))
+
   book = db.relationship('Book', backref='comments')
 
   # ! This code in 1-M Relationships points to the ONE side
-  user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+  user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
   # Associate the 2 models together
   user = db.relationship('User', backref='comments')

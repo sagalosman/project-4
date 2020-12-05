@@ -35,13 +35,52 @@ with app.app_context():
   # age_4 = Age(age='4-6')
   # age_5 = Age(age='6-9')
 
-  genre_1 = Genre(genre='Education')
-  genre_2 = Genre(genre='Fiction')
-  genre_3 = Genre(genre='Poetry')
-  genre_4 = Genre(genre='Activity Book')
-  genre_5 = Genre(genre='Fantasy')
-  genre_6 = Genre(genre='Science Fiction')
-  genre_7 = Genre(genre='Picture Book')
+  genre_1 = Genre(
+    genre='Education',
+    user= admin
+    )
+  genre_2 = Genre(
+    genre='Fiction',
+    user= admin
+  )
+  genre_3 = Genre(
+    genre='Poetry',
+    user= admin
+  )
+  genre_4 = Genre(
+    genre='Activity Book',
+    user= admin
+  )
+  genre_5 = Genre(
+    genre='Fantasy',
+    user= admin
+  )
+  genre_6 = Genre(
+    genre='Science Fiction',
+    user= admin
+  )
+  genre_7 = Genre(
+    genre='Picture Book',
+    user= admin
+  )
+  # genre_1 = Genre(genre='Education')
+  # genre_2 = Genre(
+  #   genre='Fiction' )
+  # genre_3 = Genre(
+  #   genre='Poetry'
+  # )
+  # genre_4 = Genre(
+  #   genre='Activity Book'
+  # )
+  # genre_5 = Genre(
+  #   genre='Fantasy'
+  # )
+  # genre_6 = Genre(
+  #   genre='Science Fiction'
+  # )
+  # genre_7 = Genre(
+  #   genre='Picture Book'
+  # )
 
   print('Genres created!')
 

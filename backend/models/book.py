@@ -11,7 +11,7 @@ class Book(db.Model, BaseModel):
   title = db.Column(db.String(40), nullable=False, unique=True)
   author = db.Column(db.String(40), nullable=False)
   description = db.Column(db.Text, nullable=False)
-  image = db.Column(db.String(600), nullable=True, unique=True)
+  image = db.Column(db.String(600), nullable=False, unique=True)
 
 
   # ! This code in M-M Relationships
