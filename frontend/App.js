@@ -1,26 +1,23 @@
 import React from 'react'
-import { BrowserRouter, Switch, Link, Route } from 'react-router-dom'
-import './styles/style.scss'
+import { Switch, Route, BrowserRouter } from 'react-router-dom'
 
-// ! Some starter code for your frontends, change this
-// ! however you like.
-const App = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/hello/world" component={MyPage} />
-    </Switch>
-  </BrowserRouter>
-)
 
-const Home = () => <Link to={'/hello/world'}>
-  Go to /hello/world page.
-</Link>
 
-const MyPage = () => {
-  return <p>
-    Hello World
-  </p>
+// import './styles/sagal.scss'
+// import Home from './components/Home'
+// import Navbar from './components/Navbar'
+
+
+const App = () => {
+  // return <BrowserRouter>
+  //   <Navbar />
+  //   <Switch>
+  //     <Route exact path="/" component={Home} />
+  //   </Switch>
+  // </BrowserRouter>
+  return <div className='bob'>
+  <h1>hello</h1>
+  </div>
 }
 
 export default App
