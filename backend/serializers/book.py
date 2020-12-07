@@ -1,10 +1,8 @@
 from app import ma
 from serializers.base import BaseSchema
-from serializers.age import AgeSchema
-from serializers.genre import GenreSchema
-from serializers.user import UserSchema
 from marshmallow import fields
 from models.book import Book
+from models.user import User
 
 
 class BookSchema(ma.SQLAlchemyAutoSchema, BaseSchema):
@@ -13,8 +11,8 @@ class BookSchema(ma.SQLAlchemyAutoSchema, BaseSchema):
     model = Book
     load_instance = True
 
-  comments = fields.Nested('CommentSchema', many=True)
-  ages = fields.Nested('AgeSchema', many = True)
-  genres = fields.Nested('GenreSchema', many = True)
-  users = fields.Nested('UserSchema', only =('id', 'username'))
+    load_only = ('user_id',)
+
+  user_id = fields.Integer()
+  user = fields.Nested('UserSchema', only=('id', 'username'))
 
