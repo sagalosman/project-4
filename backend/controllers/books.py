@@ -147,18 +147,16 @@ def remove(id):
 
 # ! ROUTES FOR COMMENTS
 
-# Create a new comment - Not Working!
+# CREATE a new comment 
 @router.route('/books/<int:book_id>/comments', methods=['POST'])
 def comment_create(book_id):
   comment_data = request.get_json()
   book = Book.query.get(book_id)
   
-
   # ? Deserialization step
   try: 
     comment = comment_schema.load(comment_data)
-  
- 
+   
   except ValidationError as e:
     return { 'errors': e.messages, 'message': 'Something went wrong!' }
 
@@ -167,6 +165,45 @@ def comment_create(book_id):
 
    # ? Serialization step
   return comment_schema.jsonify(comment)
+
+# UPDATE a comment
+@router.route('/books/<int:id>/comments/<int:comment_id>', methods=['PUT'])
+def update_comment(book_id, comment_id):
+  book = Book.query.get(book_id)
+  comment = Comment.query.get(comment_id)  
+  if not comment:
+    return { 'message': 'Comment not found!!'}, 404
+
+  # ? Deserialization step
+  try: 
+    comment = comment_schema.load(
+      request.get_json(),
+      instance= comment,
+      partial=True
+    )
+  
+  except ValidationError as e:
+    return { 'errors': e.messages, 'message': 'Something went wrong!'}
+
+  comment.save()
+
+  # ? Serialization step
+  return book_schema.jsonify(book), 200
+
+# DELETE a comment
+@router.route('/books/<int:book_id>/comments/<int:comment_id>', methods=['DELETE'])
+def remove_comment(book_id, comment_id):
+  book = Book.query.get(book_id)
+  comment = Comment.query.get(comment_id)
+
+  if not comment:
+    return { 'message': 'Comment not found!' }, 404
+
+  comment.book = book
+
+  comment.remove()
+
+  return { 'message': f'Comment {comment_id} --deleted successfully '}, 200
 
 
 # !  ROUTES FOR GENRES
