@@ -12,6 +12,7 @@ import Books from './components/Books'
 import SingleBook from './components/SingleBooks'
 // import BookSearch from './components/BookSearch'
 // import User from './components/User'
+import User from './components/UserProfile'
 
 const App = () => {
   return <BrowserRouter>
@@ -27,6 +28,5 @@ const App = () => {
     </Switch>
   </BrowserRouter>
 }
-
 
 export default App

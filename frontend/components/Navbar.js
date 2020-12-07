@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return <nav className="nav">
-{/* <img src={logo} alt="My logo" /> */}
+    {/* <img src={logo} alt="My logo" /> */}
     <div className='ul' >
       <Link className='a'className="li"  to="/Signup">Signup</Link>
       <Link className='a'className="li"  to="/Login">Login</Link>
