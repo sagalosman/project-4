@@ -8,7 +8,7 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Signup from './components/Signup'
 import Login from './components/Login'
-import User from './components/User'
+import User from './components/UserProfile'
 
 const App = () => {
   return <BrowserRouter>
@@ -21,6 +21,5 @@ const App = () => {
     </Switch>
   </BrowserRouter>
 }
-
 
 export default App

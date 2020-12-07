@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const User = (props) => {
 
@@ -7,70 +8,69 @@ const User = (props) => {
   const userId = props.match.params.userId
   const [user, updateUser] = useState([])
   const [comments, updateComments] = useState([])
-  const userName = localStorage.getItem('userName')
-  const userAvatar = localStorage.getitem('userAvatar')
+  const username = localStorage.getItem('username')
+  //  const userAvatar = localStorage.getItem('userAvatar')
 
-  {/* Get user ID */}  
+  // Get user ID //
   useEffect(() => {
     axios.get(`/api/users/${userId}`)
       .then(resp => {
         updateUser(resp.data)
+        console.log(resp.data)
       })
   }, [])
 
-  {/* Get user's comments */}
+  // Get user's comments //
   useEffect(() => {
-    axios.get(`/api/users/${userId}`)
+    axios.get(`/api/users/${userId}/comments`)
       .then(resp => {
         updateComments(resp.data)
       })
   }, [])
 
-  {/* Loading screen */}
-  if (!user.username) {
-    return <div className="section">
-      <div className="container">
-        <div className="title">
-          Loading ...
-        </div>
-        <progress className="progress is-small is-link" max="100">80%</progress>
-      </div>
-    </div>
-  }
+  // Loading screen //
+  //  if (!user.username) {
+  //    return <div className="section">
+  //      <div className="container">
+  //        <div className="title">
+  //          Loading ...
+  //        </div>
+  //        <progress className="progress is-small is-link" max="100">80%</progress>
+  //      </div>
+  //    </div>
+  //  }
 
-  return <div className="container is-fluid mt-5">
-    <div className="columns">
-      <div className="column">
-      </div>
-      <div className="column">
-        <figure className="image ">
-          <img className=" is-rounded" src={user.avatar} />
-        </figure>
-      </div>
-      <div className="column"></div>
+  return <div><h2></h2>
+    <div>
+      <h5>{userId} Test 1</h5>
+      <h5>{username} Test 2</h5>
     </div>
-    <div className="container is-fluid has-text-centered mt-5">
-      <h1 className="title is-1 is-capitalized">{user.userName}</h1>
-      <h2 className="subtitle is-3">Location: {user.city}</h2>
-      <h2 className="subtitle is-3">Bio:</h2>
-      <p>{user.bio}</p>
+    {/* Load the user's comments */}
+    <div>
+      {comments[0] && <div>
+        <h6>{user.username}'s comments:</h6>
+        <div>
+          {comments.map(comment => {
+            return <div key={comment.comment._id}>
+              <figure>
+                <p>
+                  <img src={userAvatar} />
+                </p>
+              </figure>
+              <div>
+                <p>
+                  {comment.comment.text}
+                </p>
+              </div>
+            </div>
+          })}
+        </div>
+      </div>}
     </div>
-    {comments[0] && <div className="container is-fluid mt-5">
-      <h2 className="subtitle is-3">{user.username}'s comments:</h2>
-      <div className="content">
-        {comments.map(comment => {
-          return <div key={comment.comment._id} className="media">
-            <figure className="media-left">
-              <p className="image is-64x64">
-                <img src={userAvatar} />
-              </p>
-            </figure>
-          </div>
-        })}
-      </div>
-    </div>}
+
   </div>
 
 }
+
 export default User
 
