@@ -8,7 +8,7 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Signup from './components/Signup'
 import Login from './components/Login'
-import User from './components/User'
+// import User from './components/User'
 
 const App = () => {
   return <BrowserRouter>
@@ -17,7 +17,7 @@ const App = () => {
       <Route exact path="/" component={Home} />
       <Route exact path="/Signup" component={Signup} />
       <Route exact path="/Login" component={Login} />
-      <Route exact path='/users/:userId' component={User} />
+      {/* <Route exact path='/users/:userId' component={UserProfile} /> */}
     </Switch>
   </BrowserRouter>
 }

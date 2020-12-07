@@ -1,12 +1,11 @@
 import React from 'react'
 
 const Home = () => {
-  return <div className='homepage'>
-    <div class="back"></div>
+  return <section className='homepage'>
     <div className='title'>
   <h1 >Where Children's Imaginations Run Wild </h1>
   </div>
-  </div>
+  </section>
   
 }
 
