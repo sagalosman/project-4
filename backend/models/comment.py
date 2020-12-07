@@ -11,7 +11,7 @@ class Comment(db.Model, BaseModel):
   content = db.Column(db.Text, nullable=False)
   
   # ! This code in 1-M Relationships points to the ONE side
-  book_id = db.Column(db.Integer, db.ForeignKey('books.id'))
+  book_id = db.Column(db.Integer, db.ForeignKey('books.id'), nullable=False)
 
   book = db.relationship('Book', backref='comments')
 

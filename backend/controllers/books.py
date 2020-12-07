@@ -2,10 +2,12 @@ from flask import Blueprint, request, g
 from models.book import Book
 from models.comment import Comment
 from models.genre import Genre
+# from models.age import Age
 from serializers.book import BookSchema
 from serializers.populate_book import PopulateBookSchema
 from serializers.comment import CommentSchema
 from serializers.genre import GenreSchema 
+# from serializers.age import AgeSchema
 from serializers.populate_genre import PopulateGenreSchema
 from middleware.secure_route import secure_route
 from marshmallow import ValidationError
@@ -20,12 +22,14 @@ comment_schema = CommentSchema()
 genre_schema = GenreSchema()
 populate_genre = PopulateGenreSchema()
 
+# age_schema = AgeSchema()
+
 
 
 router = Blueprint(__name__, 'books')
 
 
-# ! ROUTES FOR AGE
+# # ! ROUTES FOR AGE
 
 # # GET ALL AGES
 # @router.route('/ages', methods=['GET'])
@@ -48,16 +52,19 @@ router = Blueprint(__name__, 'books')
 #   # CREATE a Age 
 # @router.route('/ages', methods=['POST'])
 # def create_age():
-#   age_dictionary = request.get_json()
 
+#   age_dictionary = request.get_json()
+#   print('CREATED THE AGE GROUP')
+#   age_dictionary['user_id']= g.current_user.id
+#   print('i have the ID')
 #   try: 
 #     age = age_schema.load(age_dictionary)
   
 #   except ValidationError as e:
 #     return { 'errors': e.messages, 'message': 'Something went wrong!'}
-  
+#   print('ABOUT TO SAVE')
 #   age.save()
-
+#   print('added to database')
 #   return age_schema.jsonify(age), 200
 
 
@@ -105,7 +112,7 @@ def create():
   book_dictionary['user_id']= g.current_user.id
 
   try: 
-    book = book_schema.load(book_dictionary)
+    book = populate_book.load(book_dictionary)
   
   except ValidationError as e:
     return { 'errors': e.messages, 'message': 'Something went wrong!'}
@@ -266,7 +273,7 @@ def genre_create():
 
   return populate_genre.jsonify(genre), 200
 
-# CREATE BOOKS WITH genre
+# CREATE BOOKS WITH genre and age_group
 @router.route('/book-with-genres', methods=['POST'])
 @secure_route
 def create_book_with_genre():

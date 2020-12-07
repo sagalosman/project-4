@@ -29,16 +29,41 @@ with app.app_context():
   print('Users created')
 
 
-  # age_1 = Age(age='0-1')
-  # age_2 = Age(age='1-2')
-  # age_3 = Age(age='2-4')
-  # age_4 = Age(age='4-6')
-  # age_5 = Age(age='6-9')
+  # age_1 = Age(
+  #   age='0-1',
+  #   user= admin
+  # )
+  # age_2 = Age(
+  #   age='1-2',
+  #   user= admin
+  # )
+  # age_3 = Age(
+  #   age='2-4',
+  #   user= admin
+  # )
+  # age_4 = Age(
+  #   age='4-6',
+  #   user= admin
+  # )
+  # age_5 = Age(
+  #   age='6-9',
+  #   user= admin
+  # )
+  # age_6 = Age(
+  #   age='9-11',
+  #   user= admin
+  # )
+  # age_7 = Age(
+  #   age='12-14',
+  #   user= admin
+  # )
+
+  print('Age groups created!')
 
   genre_1 = Genre(
     genre='Education',
     user= admin
-    )
+  )
   genre_2 = Genre(
     genre='Fiction',
     user= admin
@@ -63,24 +88,7 @@ with app.app_context():
     genre='Picture Book',
     user= admin
   )
-  # genre_1 = Genre(genre='Education')
-  # genre_2 = Genre(
-  #   genre='Fiction' )
-  # genre_3 = Genre(
-  #   genre='Poetry'
-  # )
-  # genre_4 = Genre(
-  #   genre='Activity Book'
-  # )
-  # genre_5 = Genre(
-  #   genre='Fantasy'
-  # )
-  # genre_6 = Genre(
-  #   genre='Science Fiction'
-  # )
-  # genre_7 = Genre(
-  #   genre='Picture Book'
-  # )
+ 
 
   print('Genres created!')
 
@@ -89,7 +97,7 @@ with app.app_context():
     author= 'Dr Seuss',
     description= 'The hat is in the cat',
     image= 'https://cdn.waterstones.com/bookjackets/large/9780/0073/9780007348695.jpg',
-    # ages= [age_5],
+    # age= age_5,
     genres= [genre_2],
     user = admin
   )
@@ -99,7 +107,7 @@ with app.app_context():
     author= 'Roald Dahl',
     description= 'Mmmmm chocolate',
     image= 'https://m.media-amazon.com/images/I/51gjXL3FldL.jpg',
-    # ages= [age_5],
+    # age= age_5,
     genres= [genre_2, genre_5],
     user= admin
   )
@@ -109,6 +117,7 @@ with app.app_context():
     author= 'E.B. White',
     description= 'I really got stuck into this one',
     image= 'tbc1',
+    # age= age_5,
     user = admin
   )
 
@@ -117,6 +126,7 @@ with app.app_context():
     author= 'J. K. Rowling',
     description= 'Scary!',
     image= 'tbc2',
+    # age= age_7,
     genres= [genre_2],
     user = admin
   )
@@ -126,7 +136,7 @@ with app.app_context():
     author= 'Judith Kerr',
     description= 'His favourite was Rooibos!',
     image= 'tbc3',
-    # ages= [age_3],
+    # age= age_5,
     genres= [genre_2, genre_7],
     user = admin   
   )
@@ -137,7 +147,7 @@ with app.app_context():
     author= 'Julia Donaldson',
     description= 'A rhyming story about a mouse and a monster',
     image= 'tbc4',
-    # ages= [age_3],
+    # age= age_5,
     genres= [genre_2, genre_5, genre_7],
     user = admin    
   )
@@ -147,7 +157,7 @@ with app.app_context():
     author= 'Eric Carle',
     description= 'Soooooo hungry!',
     image= 'tbc5',
-    # ages= [age_3],
+    # age= age_5,
     genres= [genre_2, genre_5, genre_7],
     user = admin   
   )
@@ -157,7 +167,7 @@ with app.app_context():
     author= 'Roald Dahl',
     description= 'They really are twits',
     image= 'tbc6',
-    # ages= [age_5],
+    # age= age_5,
     genres= [genre_2],
     user = admin    
   )
@@ -167,7 +177,7 @@ with app.app_context():
     author= 'David Walliams',
     description= 'Double-O bananas',
     image= 'tbc7',
-    # ages= [age_5],
+    # age= age_5,
     genres= [genre_2],
     user = admin    
   )
@@ -177,7 +187,7 @@ with app.app_context():
     author= 'Julia Donaldson',
     description= 'Surprisingly scary!',
     image= 'tbc8',
-    # ages= [age_5],
+    # age= age_5,
     genres= [genre_2, genre_5],
     user = admin    
   )
