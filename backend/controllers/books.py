@@ -1,4 +1,4 @@
-from flask import Blueprint, request, g
+from flask import Blueprint, request, g , jsonify
 from models.book import Book
 from models.comment import Comment
 from models.genre import Genre
@@ -9,6 +9,7 @@ from serializers.genre import GenreSchema
 from serializers.populate_genre import PopulateGenreSchema
 from middleware.secure_route import secure_route
 from marshmallow import ValidationError
+
 
 
 
@@ -302,5 +303,14 @@ def update_book_with_genre(book_id):
 
 
 
+# ! ROUTE TO PROXY REQUEST
 
+import requests 
 
+@router.route('/proxy-books/:query', methods=['GET'])
+def external_books():
+  book = requests.get('http://openlibrary.org/search.json?q=query')
+
+  book = resp.json()
+
+  return jsonify(book), 200
