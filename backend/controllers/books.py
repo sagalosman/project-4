@@ -2,12 +2,10 @@ from flask import Blueprint, request, g
 from models.book import Book
 from models.comment import Comment
 from models.genre import Genre
-# from models.age import Age
 from serializers.book import BookSchema
 from serializers.populate_book import PopulateBookSchema
 from serializers.comment import CommentSchema
 from serializers.genre import GenreSchema 
-# from serializers.age import AgeSchema
 from serializers.populate_genre import PopulateGenreSchema
 from middleware.secure_route import secure_route
 from marshmallow import ValidationError
@@ -22,64 +20,11 @@ comment_schema = CommentSchema()
 genre_schema = GenreSchema()
 populate_genre = PopulateGenreSchema()
 
-# age_schema = AgeSchema()
 
 
 
 router = Blueprint(__name__, 'books')
 
-
-# # ! ROUTES FOR AGE
-
-# # GET ALL AGES
-# @router.route('/ages', methods=['GET'])
-# def all_age():
-#   ages = Age.query.all()
-
-#   return age_schema.jsonify(ages, many=True), 200
-
-# # GET a single age
-# @router.route('/ages/<int:id>', methods=['GET'])
-# def get_single_age(id):
-  
-#   age = Age.query.get(id) 
-
-#   if not age:
-#     return { 'message': 'Age not found!' }, 404
-
-#   return age_schema.jsonify(age), 200
-
-#   # CREATE a Age 
-# @router.route('/ages', methods=['POST'])
-# def create_age():
-
-#   age_dictionary = request.get_json()
-#   print('CREATED THE AGE GROUP')
-#   age_dictionary['user_id']= g.current_user.id
-#   print('i have the ID')
-#   try: 
-#     age = age_schema.load(age_dictionary)
-  
-#   except ValidationError as e:
-#     return { 'errors': e.messages, 'message': 'Something went wrong!'}
-#   print('ABOUT TO SAVE')
-#   age.save()
-#   print('added to database')
-#   return age_schema.jsonify(age), 200
-
-
-# # DELETE a age
-# @router.route('/ages/<int:id>', methods=['DELETE'])
-# def remove_age(id):
-
-#   age = Age.query.get(id)
-
-#   if not age:
-#     return { 'message': 'Age not found!' }, 404
-
-#   age.remove()
-
-#   return { 'message': f'Age {id} ---deleted successfully '}, 200
 
 
 # ! ROUTES FOR BOOKS
@@ -273,7 +218,7 @@ def genre_create():
 
   return populate_genre.jsonify(genre), 200
 
-# CREATE BOOKS WITH genre and age_group
+#! CREATE BOOKS WITH genre 
 @router.route('/book-with-genres', methods=['POST'])
 @secure_route
 def create_book_with_genre():
@@ -290,7 +235,7 @@ def create_book_with_genre():
   book.save()
   return populate_book.jsonify(book), 200
 
-# UPDATE a genre
+#! UPDATE a genre
 
 @router.route('/book-with-genres/<int:book_id>', methods=['PUT'])
 @secure_route

@@ -10,9 +10,7 @@ class PopulateGenreSchema(ma.SQLAlchemyAutoSchema, BaseSchema):
   class Meta:
     model = Genre
     load_instance = True
-    load_only = ('user_id',)
 
-  user_id = fields.Integer()
 
   books = fields.Nested('BookSchema', many=True)
-  user = fields.Nested('UserSchema', only =('id', 'username'))
+  
