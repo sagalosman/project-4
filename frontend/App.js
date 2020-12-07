@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
 
+import User from './components/User'
 
 
 // import './styles/sagal.scss'
@@ -13,10 +14,11 @@ const App = () => {
   //   <Navbar />
   //   <Switch>
   //     <Route exact path="/" component={Home} />
+  //     <Route exact path='/users/:userId' component={User} />
   //   </Switch>
   // </BrowserRouter>
   return <div className='bob'>
-  <h1>hello</h1>
+    <h1>hello</h1>
   </div>
 }
 
