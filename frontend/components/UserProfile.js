@@ -9,7 +9,7 @@ const User = (props) => {
   const [user, updateUser] = useState([])
   const [comments, updateComments] = useState([])
   const username = localStorage.getItem('username')
-  //  const userAvatar = localStorage.getItem('userAvatar')
+  const userAvatar = localStorage.getItem('userAvatar')
 
   // Get user ID //
   useEffect(() => {
@@ -40,12 +40,12 @@ const User = (props) => {
   //    </div>
   //  }
 
-  return <div><h2></h2>
+  return <div><h2>Profile</h2>
     <div>
       <h5>{userId} Test 1</h5>
       <h5>{username} Test 2</h5>
     </div>
-    {/* Load the user's comments */}
+    {/* Load the user's comments and avatar */}
     <div>
       {comments[0] && <div>
         <h6>{user.username}'s comments:</h6>
@@ -67,10 +67,8 @@ const User = (props) => {
         </div>
       </div>}
     </div>
-
   </div>
 
 }
 
 export default User
-
