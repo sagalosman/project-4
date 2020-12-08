@@ -2,6 +2,7 @@ import React, {  useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Bulma from 'bulma'
+import SearchBar from './SearchBar'
 
 
 const Books = () => {
@@ -19,6 +20,7 @@ const Books = () => {
   console.log(books)
 
   return <div className = "section">
+    {/* <SearchBar /> */}
     <h2> Books Page</h2>
     <div className="columns is-multiline is-mobile">
       {books.map((book, index) => {

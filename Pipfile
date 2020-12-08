@@ -9,11 +9,10 @@ flask-sqlalchemy = "*"
 psycopg2-binary = "*"
 flask-marshmallow = "*"
 marshmallow-sqlalchemy = "*"
-marshmallow = "*"
 flask-bcrypt = "*"
-bcrypt = "*"
-requests = "*"
 pyjwt = "*"
+requests = "*"
+marshmallow = "*"
 sqlalchemy = "*"
 
 [dev-packages]

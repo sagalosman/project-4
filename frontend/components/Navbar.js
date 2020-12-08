@@ -9,10 +9,11 @@ const Navbar = () => {
     <div className='ul' >
       <Link className='a'className="li"  to="/Signup">Signup</Link>
       <Link className='a'className="li"  to="/Login">Login</Link>
+      <Link className='a'className='li'  to = "/booksearch"> Search Books</Link>
       <Link className='a'className="li"   to = "/books">Books</Link>
       <Link className='a'className="li"   to="/">Home</Link>
       <Link className='a'className='li'  to = "/books/:bookId"></Link>
-      <Link className='a'className='li'  to = "/books/booksearch"> Search Books</Link>
+      
     </div>
   </nav>
   </section>
