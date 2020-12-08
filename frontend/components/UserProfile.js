@@ -21,6 +21,8 @@ const User = (props) => {
   }, [])
 
   // Get user's comments //
+  //! This is the route to get all the comments associated with the book
+  //@router.route('/books/<int:book_id>/comments/<int:comment_id>', methods=['GET'])
   useEffect(() => {
     axios.get(`/api/users/${userId}/comments`)
       .then(resp => {
