@@ -420,7 +420,7 @@ with app.app_context():
 
   comment1 = Comment(
     content = 'This book is fun to read, My little ones love it',
-    book=cat_in_the_hat,
+    book=the_hungry_caterpillar,
     user = admin
   )
 
@@ -428,10 +428,10 @@ with app.app_context():
   print('Adding to database')
 
 
-  db.session.add(cat_in_the_hat)
-  db.session.add(charlie_and_the_chocolate_factory)
-  db.session.add(charlottes_web)
-  db.session.add(harry_potter_stone)
+  db.session.add(the_hungry_caterpillar)
+  # db.session.add(charlie_and_the_chocolate_factory)
+  # db.session.add(charlottes_web)
+  # db.session.add(harry_potter_stone)
   db.session.add(the_tiger_came_to_tea)
   db.session.add(the_gruffalo)
   db.session.add(tracy_beaker)

@@ -11,7 +11,7 @@ import Login from './components/Login'
 // import User from './components/User'
 import Books from './components/Books'
 import SingleBook from './components/SingleBooks'
-// import BookSearch from './components/BookSearch'
+import BookSearch from './components/BookSearch'
 // import User from './components/User'
 import User from './components/UserProfile'
 
@@ -20,12 +20,13 @@ const App = () => {
     <Navbar/>
     <Switch>
       <Route exact path="/" component={Home} />
+      <Route extact path = "/books/booksearch" component = {BookSearch} />
       <Route exact path="/Signup" component={Signup} />
       <Route exact path="/Login" component={Login} />
       {/* <Route exact path='/users/:userId' component={UserProfile} /> */}
       <Route exact path = "/books" component = {Books} />
       <Route extact path = "/books/:bookId" component = {SingleBook} />
-      {/* <Route extact path = "/books/booksearch" component = {BookSearch} /> */}
+     
       {/* <Route exact path='/users/:userId' component={User} /> */}
     </Switch>
   </BrowserRouter>
