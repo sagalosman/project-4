@@ -29,7 +29,7 @@ const SingleBook = (props) => {
 
 
   return <div className="section">
-    <h2> Single Book page</h2>
+    <h2></h2>
 
     <div className="container">
       <h2 className="title is-4">

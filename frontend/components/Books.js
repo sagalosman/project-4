@@ -19,7 +19,7 @@ const Books = () => {
   console.log(books)
 
   return <div className = "section">
-    <h2> Books Page</h2>
+    <h2>Explore the books!</h2>
     <div className="columns is-multiline is-mobile">
       {books.map((book, index) => {
         return <div className="column is-one-third-desktop is-half-tablet is-half-mobile" 

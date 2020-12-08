@@ -11,7 +11,7 @@ const User = (props) => {
   const username = localStorage.getItem('username')
   const userAvatar = localStorage.getItem('userAvatar')
 
-  // Get user ID //
+  // ! Get user ID //
   useEffect(() => {
     axios.get(`/api/users/${userId}`)
       .then(resp => {
@@ -20,17 +20,17 @@ const User = (props) => {
       })
   }, [])
 
-  // Get user's comments //
+  // ! Get user's comments //
   //! This is the route to get all the comments associated with the book
   //@router.route('/books/<int:book_id>/comments/<int:comment_id>', methods=['GET'])
-  useEffect(() => {
-    axios.get(`/api/users/${userId}/comments`)
-      .then(resp => {
-        updateComments(resp.data)
-      })
-  }, [])
+  //useEffect(() => {
+  //  axios.get(`/api/users/${userId}/comments`)
+  //    .then(resp => {
+  //      updateComments(resp.data)
+  //    })
+  //}, [])
 
-  // Loading screen //
+  // ! Loading screen //
   //  if (!user.username) {
   //    return <div className="section">
   //      <div className="container">
@@ -42,34 +42,36 @@ const User = (props) => {
   //    </div>
   //  }
 
-  return <div><h2>Profile</h2>
+  return <section className='background-img'>
     <div>
-      <h5>{userId} Test 1</h5>
-      <h5>{username} Test 2</h5>
+      <h2 className='userTitle'>Profile</h2>
+      <h2 className='userSubTitle'>{userId}</h2>
+      <h2 className='userSubTitle'>{username}</h2>
     </div>
-    {/* Load the user's comments and avatar */}
-    <div>
-      {comments[0] && <div>
-        <h6>{user.username}'s comments:</h6>
-        <div>
-          {comments.map(comment => {
-            return <div key={comment.comment._id}>
-              <figure>
-                <p>
-                  <img src={userAvatar} />
-                </p>
-              </figure>
-              <div>
-                <p>
-                  {comment.comment.text}
-                </p>
-              </div>
-            </div>
-          })}
-        </div>
-      </div>}
-    </div>
-  </div>
+  </section>
+
+  //  {/* Load the user's comments and avatar */}
+  //  <div>
+  //    {comments[0] && <div>
+  //      <h2 className='userComments'>{user.username}'s comments:</h2>
+  //      <div>
+  //        {comments.map(comment => {
+  //          return <div key={comment.comment._id}>
+  //            <figure>
+  //              <p>
+  //                <img src={userAvatar} />
+  //              </p>
+  //            </figure>
+  //            <div>
+  //              <p>
+  //                {comment.comment.text}
+  //              </p>
+  //            </div>
+  //          </div>
+  //        })}
+  //      </div>
+  //    </div>}
+  //  </div>
 
 }
 

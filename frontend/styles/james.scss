@@ -1,0 +1,59 @@
+
+// Google font import
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+$nerko-one: 'Nerko One', serif;
+
+// This is the round logo in the Navbar //
+.navicon {
+  width: 20px;
+  position: relative;
+  left: 30px;
+  top: 10px;
+}
+
+// This is the 'Poppins' name in the navbar //
+.navpoppins {
+  font-family: $nerko-one;
+  color: #4e8d7c;
+  font-size: 30px;
+  font-weight: bolder;
+  position: relative;
+  left: 60px;
+  top: -51px;
+  width: 100px;
+}
+
+// User Profile page //
+.background-img {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  background: url(https://i.imgur.com/kJVdIUF.jpg) no-repeat top center; 
+  background-size:cover;
+}
+
+// ! Copy styling over from Signup and Login pages
+.userTitle {
+  color: #4e8d7c;
+  font-size: 50px;
+  position: fixed;
+  left: 60px;
+}
+
+.userSubTitle {
+  color: #4e8d7c;
+  font-size: 30px;
+  position: fixed;
+  left: 60px;
+  top: 130px;
+}
+
+.userComments {
+  color: #4e8d7c;
+  font-size: 30px;
+  position: fixed;
+  left: 60px;
+  top: 160px;
+}
+
+
