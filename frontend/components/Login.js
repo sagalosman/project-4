@@ -55,7 +55,7 @@ const Login = (props) => {
         />
       </div >
 
-      <button className="button" type="submit" onClick={handleSubmit}>Log in</button>
+      <button className="buttonsl" type="submit" onClick={handleSubmit}>Log in</button>
       <Link to="/signup" className="discrete">Not registered? Sign up</Link>
     </form>
   </div>
