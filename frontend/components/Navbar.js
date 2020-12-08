@@ -6,10 +6,10 @@ const Navbar = () => {
   return <section>
     <nav className="nav">
       <div>
-        <a className="navicon" href="/">
+        {/* <a className="navicon" href="/">
           <img src="https://i.imgur.com/dlKZbjY.png" alt="Poppins" width='50px' />
-          {/* <p className="navpoppins" >Poppins</p> */}
-        </a>
+
+        </a> */}
         <div className='ul' >
           <Link className='a' className="li" to="/Signup">Signup</Link>
           <Link className='a' className="li" to="/Login">Login</Link>
