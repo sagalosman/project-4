@@ -9,7 +9,7 @@ const Signup = (props) => {
     lastName: '',
     username: '',
     email: '',
-    password: '',
+    password: ''
   })
 
   function handleChange(event) {
@@ -28,7 +28,7 @@ const Signup = (props) => {
 
     axios.post('api/signup', formData)
       .then(resp => {
-        props.history.push('/')
+        props.history.push('/login')
       })
   }
 
@@ -70,8 +70,8 @@ const Signup = (props) => {
       </div >
       
 
-      <button className="buttonsl" type="submit" onClick={handleSubmit}>Sign Up</button>
-      {<Link to='/login' className="discrete">Have an account? Login</Link>}
+      <button className="button" type="submit" onSubmit={handleSubmit}>Sign Up</button>
+      <Link to='/login' className="discrete">Have an account? Login</Link>
     </form>
   </div>
 }

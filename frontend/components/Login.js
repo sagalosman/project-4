@@ -25,7 +25,7 @@ const Login = (props) => {
       .then(resp => {
         localStorage.setItem('token', resp.data.token)
         localStorage.setItem('username', resp.data.username)
-        props.history.push('/home')
+        props.history.push('/')
       })
   }
 
