@@ -50,7 +50,8 @@ with app.app_context():
     image= 'https://d3ddkgxe55ca6c.cloudfront.net/assets/t1497975559/a/c3/44/113562-ml-53622.jpg',
     age= '10-16',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=aTt0e_DB2tAC&printsec=frontcover&dq=Starring+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwivkv2mwcDtAhXE'
   )
   hetty_feather = Book(
     title= 'Hetty Feather',
@@ -59,7 +60,8 @@ with app.app_context():
     image= 'https://m.media-amazon.com/images/I/61dz70uSzEL.jpg',
     age= '10-16',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=FRPz5DkfvfwC&printsec=frontcover&dq=Hetty+Feather&hl=en&sa=X&ved=2ahUKEwjIiNq9wcDtAhWTunEKHdP6CN0Q6AEwAHoECAEQAg#v=onepage&q=Hetty%20Feather&f=false'
   )
   tracy_beaker2 = Book(
     title= 'The Story of Tracy Beaker',
@@ -68,7 +70,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/91mPKwML6iL.jpg',
     age= '10-16',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   double_act = Book(
     title= 'Double Act',
@@ -77,7 +80,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/91XbgXzN9FL.jpg',
     age= '10-16',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=-3bt_noxhxkC&printsec=frontcover&dq=Double+Act&hl=en&sa=X&ved=2ahUKEwj-9vCDxsDtAhVBrHEKHV_6A8cQ6wEwAHoECAYQAQ#v=onepage&q=Double%20Act&f=false'
   )
   best_friends = Book(
     title= 'Best Friends',
@@ -86,7 +90,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/51EBX1KP9WL.jpg',
     age= '8-10',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=43EsiVMSbIMC&printsec=frontcover&dq=Best+Friends+wilson&hl=en&sa=X&ved=2ahUKEwji1LijxsDtAhXlXhUIHUbwB3AQ6wEwAHoECAUQAQ#v=onepage&q=Best%20Friends%20wilson&f=false'
   )
 
   cat_in_the_hat = Book(
@@ -96,7 +101,8 @@ with app.app_context():
     image= 'https://cdn.waterstones.com/bookjackets/large/9780/0073/9780007348695.jpg',
     age= '6-9',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=2fY9DwAAQBAJ&printsec=frontcover&dq=Cat+in+the+Hat&hl=en&sa=X&ved=2ahUKEwjcr97TxsDtAhU3QkEAHaELAVQQ6wEwAXoECAkQAQ#v=onepage&q=Cat%20in%20the%20Hat&f=false'
   )
   green_eggs_and_ham = Book(
     title= 'Green Eggs and Ham',
@@ -105,7 +111,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/51Q7ZVHDFlL.jpg',
     age= '6-9',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=3_Y9DwAAQBAJ&printsec=frontcover&dq=Green+Eggs+and+Ham&hl=en&sa=X&ved=2ahUKEwjH87GWy8DtAhWMgVwKHeAHDVMQ6wEwAHoECAAQAQ#v=onepage&q=Green%20Eggs%20and%20Ham&f=false'
   )
   how_the_grinch_stole_christmas = Book(
     title= 'How the Grinch Stole Christmas!',
@@ -114,8 +121,12 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/81SJew0hSOL.jpg',
     age= '6-9',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=1fY9DwAAQBAJ&printsec=frontcover&dq=Green+Eggs+and+How+the+Grinch+Stole+Christmas!&hl=en&sa=X&ved=2ahUKEwjs5tOmy8DtAhXUiVwKHR7zBVAQ6wEwAHoECAYQAQ#v=onepage&q&f=false'
   )
+
+
+
   one_fish_two_fish = Book(
     title= 'One fish, two fish, red fish, blue fish',
     author= 'Dr Seuss',
@@ -123,7 +134,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/81Cnh7MuzTL.jpg',
     age= '6-9',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://www.google.co.uk/books/edition/_/2_Y9DwAAQBAJ?hl=en&gbpv=1'
   )
   oh_the_places_you_will_go = Book(
     title= 'Oh, the Places You Will Go!',
@@ -132,7 +144,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/51HY300joCL._SX364_BO1,204,203,200_.jpg',
     age= '6-9',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://www.google.co.uk/books/edition/Oh_The_Places_You_ll_Go/1_Y9DwAAQBAJ?hl=en&gbpv=1&dq=Oh,+the+Places+You%27ll+Go!&printsec=frontcover'
   )
   fox_in_socks = Book(
     title= 'Fox in Socks',
@@ -141,7 +154,8 @@ with app.app_context():
     image= 'https://images-eu.ssl-images-amazon.com/images/I/51g2xGyFCkL._AC_UL600_SR429,600_.jpg',
     age= '6-9',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://www.google.co.uk/books/edition/Fox_in_Socks/5fY9DwAAQBAJ?hl=en&gbpv=1'
   )
   the_lorex = Book(
     title= 'The Lorax',
@@ -150,7 +164,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/51rKfxKi+bL._SX362_BO1,204,203,200_.jpg',
     age= '6-9',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   horton_hears_a_who = Book(
     title= 'Horton Hears a Who!',
@@ -159,7 +174,8 @@ with app.app_context():
     image= 'https://cdn.waterstones.com/bookjackets/large/9780/0074/9780007455942.jpg',
     age= '6-9',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   hop_on_pop = Book(
     title= 'Hop on Pop',
@@ -168,7 +184,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/5138vQtt2TL._SX354_BO1,204,203,200_.jpg',
     age= '1-3',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
 
   abc = Book(
@@ -178,7 +195,8 @@ with app.app_context():
     image= 'https://cdn.waterstones.com/bookjackets/large/9780/0074/9780007487752.jpg',
     age= '1-3',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
 
   charlie_and_the_chocolate_factory = Book(
@@ -188,7 +206,8 @@ with app.app_context():
     image= 'https://m.media-amazon.com/images/I/51gjXL3FldL.jpg',
     age= '6-9',
     genres= [genre_2, genre_5],
-    user= admin
+    user= admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   matilda = Book(
     title= 'Matilda',
@@ -197,7 +216,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/919-lhp2zeL.jpg',
     age= '6-9',
     genres= [genre_2, genre_5],
-    user= admin
+    user= admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   giant_peach = Book(
     title= 'James and the Giant Peach',
@@ -206,7 +226,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/81PPxXWNA2L.jpg',
     age= '6-9',
     genres= [genre_2, genre_5],
-    user= admin
+    user= admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   the_bfg = Book(
     title= 'The BFG',
@@ -215,7 +236,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/91I2ywLs1YL.jpg',
     age= '6-9',
     genres= [genre_2, genre_5],
-    user= admin
+    user= admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   the_witches = Book(
     title= 'The Witches',
@@ -224,7 +246,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/71Bbi-tg-mL.jpg',
     age= '6-9',
     genres= [genre_2, genre_5],
-    user= admin
+    user= admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   fantastic_mr_fox = Book(
     title= 'Fantastic Mr Fox',
@@ -233,7 +256,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/81JPnO7wUBL.jpg',
     age= '6-9',
     genres= [genre_2, genre_5],
-    user= admin
+    user= admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   georges_marvellous_medicine = Book(
     title= 'Georges Marvellous Medicine',
@@ -242,7 +266,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/91+cH46VDyL.jpg',
     age= '6-9',
     genres= [genre_2, genre_5],
-    user= admin
+    user= admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   danny_the_champion_of_the_world = Book(
     title= 'Danny the Champion of the World',
@@ -251,7 +276,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/51dlpuRTB1L.jpg',
     age= '6-9',
     genres= [genre_2, genre_5],
-    user= admin
+    user= admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   esio_trot = Book(
     title= 'Esio Trot',
@@ -260,7 +286,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/81PoTVk77iL.jpg',
     age= '6-9',
     genres= [genre_2, genre_5],
-    user= admin
+    user= admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   the_magic_finger = Book(
     title= 'The Magic Finger',
@@ -269,7 +296,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/91RJ7DOGwhL.jpg',
     age= '6-9',
     genres= [genre_2, genre_5],
-    user= admin
+    user= admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   dirty_beasts = Book(
     title= 'Dirty Beasts',
@@ -278,7 +306,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/91Av-Bse-RL.jpg',
     age= '6-9',
     genres= [genre_2, genre_5],
-    user= admin
+    user= admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )    
 
   charlottes_web = Book(
@@ -287,7 +316,8 @@ with app.app_context():
     description= 'Charlottes Web is about a girl named Fern, a pig named Wilbur and a spider called Charlotte. They live on a farm and Fern is horrified when she finds out that Wilbur as a piglet is to be slaughtered. She rescues Wilbur only then to have him sent away from her to her uncles farm where he is friendless and snubbed by the other animals except Charlotte, a spider, and this is where Wilburs adventures begin.',
     image= 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1439632243l/24178._SY475_.jpg',
     age= '6-9',
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
 
   harry_potter_stone = Book(
@@ -297,7 +327,8 @@ with app.app_context():
     image= 'https://media.bloomsbury.com/rep/bj/9780747532699.jpg',
     age= '12-14',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   harry_potter_secrets = Book(
     title= 'Harry Potter and the Chamber of Secrets',
@@ -306,7 +337,8 @@ with app.app_context():
     image= 'https://m.media-amazon.com/images/I/51TA3VfN8RL.jpg',
     age= '12-14',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   harry_potter_azkaban = Book(
     title= 'Harry Potter and the Prisoner of Azkaban',
@@ -315,7 +347,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/51vsSNLsBgL.jpg',
     age= '12-14',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   harry_potter_fire = Book(
     title= 'Harry Potter and the Goblet of Fire',
@@ -324,16 +357,18 @@ with app.app_context():
     image= 'https://embed.cdn.pais.scholastic.com/v1/channels/sso/products/identifiers/isbn/9780545582957/primary/renditions/700?useMissingImage=true',
     age= '12-14',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   harry_potter_phoenix = Book(
     title= 'Harry Potter and the Order of the Phoenix',
     author= 'J. K. Rowling',
     description= 'Harry Potter is furious that he has been abandoned at the Dursleys house for the summer, for he suspects that Voldemort is gathering an army, that he himself could be attacked, and that his so-called friends are keeping him in the dark. Finally rescued by wizard bodyguards, he discovers that Dumbledore is regrouping the Order of the Phoenix – a secret society first formed years ago to fight Voldemort. But the Ministry of Magic is against the Order, lies are being spread by the wizards tabloid, the Daily Prophet, and Harry fears that he may have to take on this epic battle against evil alone.',
-    image= 'https://media.bloomsbury.com/rep/f/9781408894750.jpg',
+    image= 'https://images-na.ssl-images-amazon.com/images/I/5123M2VGGKL.jpg',
     age= '12-14',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   harry_potter_prince = Book(
     title= 'Harry Potter and the Half-Blood Prince ',
@@ -342,7 +377,8 @@ with app.app_context():
     image= 'https://images-na.ssl-images-amazon.com/images/I/91YH0ZtB9XL.jpg',
     age= '12-14',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
   harry_potter_hallows = Book(
     title= 'Harry Potter and the Deathly Hallows ',
@@ -351,68 +387,75 @@ with app.app_context():
     image= 'https://kbimages1-a.akamaihd.net/35cd6228-f6b1-4b30-8edf-b56bf1738180/353/569/90/False/harry-potter-and-the-deathly-hallows-4.jpg',
     age= '12-14',
     genres= [genre_2],
-    user = admin
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
 
   the_tiger_came_to_tea = Book(
     title= 'The Tiger Who Came To Tea',
     author= 'Judith Kerr',
-    description= 'His favourite was Rooibosnana!',
+    description= 'The childrens classic, written in 1968 by Judith Kerr, tells the story of a young girl named Sophie, who has to stay home with her mum because its too rainy to go to the park. Fortunately, the day takes an interesting turn when a hungry tiger turns up at the door and asks if he can join Sophie and her mother for tea.',
     image= 'https://images-na.ssl-images-amazon.com/images/I/81navSY0iUL.jpg',
     age= '6-9',
     genres= [genre_2, genre_7],
-    user = admin   
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'   
   )
 
 
   the_gruffalo = Book(
     title= 'The Gruffalo',
     author= 'Julia Donaldson',
-    description= 'A rhyming story about a mouse and a monster',
-    image= 'tbc4',
+    description= 'A rhyming story about a clever little mouse and a monster. When mouse goes for a walk in a dangerous forest, he invents tales of a fantastic creature called a Gruffalo to scare off his enemies. Imagine his surprise when he meets a real Gruffalo!',
+    image= 'https://images-na.ssl-images-amazon.com/images/I/517GBNF8VNL.jpg',
     age= '6-9',
     genres= [genre_2, genre_5, genre_7],
-    user = admin    
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'    
   )
 
   the_hungry_caterpillar = Book(
     title= 'The Very Hungry Caterpillar',
     author= 'Eric Carle',
-    description= 'Soooooo hungry!',
-    image= 'tbc5',
+    description= 'The Very Hungry Caterpillar—in which a caterpillar hatches out of an egg on a Sunday, proceeds to eat vibrantly colored fruits it finds in escalating quantities from Monday to Friday, goes on a junk-food-eating rampage on Saturday, eats a nice green leaf on Sunday, and then nestles into a cocoon for two weeks and emerges a beautiful butterfly',
+    image= 'https://images-na.ssl-images-amazon.com/images/I/71ooSs5M6iL.jpg',
     age= '6-9',
     genres= [genre_2, genre_5, genre_7],
-    user = admin   
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'  
   )
 
   twits = Book(
     title= 'The Twits',
     author= 'Roald Dahl',
-    description= 'They really are twits',
-    image= 'tbc6',
+    description= 'The Twits, who are retired circus trainers, are trying to create the first upside-down monkey circus, leaving the monkeys to stand on their heads for hours on end. If they fail to do what Mr. Twit says, Mrs. Twit beats them with her cane.',
+    image= 'https://images-na.ssl-images-amazon.com/images/I/91D7XQVZCCL.jpg',
     age= '6-9',
     genres= [genre_2],
-    user = admin    
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'    
   )
 
   codename_bananas = Book(
     title= 'Codename Bananas',
     author= 'David Walliams',
-    description= 'Double-O bananas',
-    image= 'tbc7',
+    description= 'Code Name Bananas is a whizz-bang epic action adventure for all the family! 1940. Britain is at war with Germany. As bombs rain down on the city, orphan boy Eric forms an extraordinary friendship with a remarkable gorilla: Gertrude.',
+    image= 'https://m.media-amazon.com/images/I/81yBRyp9dIL.jpg',
     age= '6-9',
     genres= [genre_2],
-    user = admin    
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'    
   )
 
   stick_man = Book(
     title= 'Stick Man',
     author= 'Julia Donaldson',
-    description= 'Surprisingly scary!',
-    image= 'tbc8',
+    description= 'Stick Man written by former Childrens Laureate, Julia Donaldson, and illustrated by Axel Scheffler is a childrens story about an anthropomorphic wooden stick who becomes separated from his family home and his Odyssey-like adventure to return there.',
+    image= 'https://images-na.ssl-images-amazon.com/images/I/A1ssF6aKn6L.jpg',
     age= '6-9',
     genres= [genre_2, genre_5],
-    user = admin    
+    user = admin,
+    read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'  
   )
 
 
