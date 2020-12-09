@@ -28,30 +28,40 @@ const SingleBook = (props) => {
   }
 
 
-  return <div className="section">
-    <h2></h2>
-
-    <div className="container">
-      <h2 className="title is-4">
-        {book.title}
-      </h2>
-      <p className="subtitle is-4">
-        By {book.author}
-      </p>
-      <img src={book.image} alt={book.title} />
-      {book.title && book.genres.map((genre, genreId) => {
-        return <div key={genreId}>
-          <h5>{genre.genre } </h5>
-        </div>
-      }) }  
-      <p>Recommended age: <small> {book.age} </small></p> 
-      <p> {book.description} </p>
-      <p></p>
+  return <main>
+    <div class="container">
+    <div class="grid second-nav">
+    <div class="column-xs-12">
+      <nav className='nav'>
+      <div className='ol' class="breadcrumb-list">
+            <div className='li' className='a' class="breadcrumb-item"><a>Genre</a></div>
+            <div className='li' className='a' class="breadcrumb-item"><a> {book.age}</a></div>
+          </div>
+      </nav>
     </div>
+    </div>
+    <div class="column-xs-12 column-md-5" class="grid product">
+    <div class="column-xs-12 column-md-7">
+    <div class="product-image">
+    <img className='imagezoom' src={book.image} alt={book.title} />
+    </div>
+    </div>
+    </div>
+    <div class="column-xs-12 column-md-5">
+        <h1 className='h1' >{book.title}</h1>
+        <h2 className='h1' >{book.author}</h2>
+        <div class="description">
+          <p>{book.description}</p>
+          
+        </div>
+        <button class="readmore">Read More</button>
+      </div>
+
+    </div>
+  </main>
   
-
-
-  </div>
+ 
+  
 }
 
 

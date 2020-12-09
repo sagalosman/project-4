@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return <section>
-    <nav className="nav">
-        <a className="navicon" href="/">
-          <img src="https://i.imgur.com/dlKZbjY.png" alt="Poppins" width='50px' />
-          {/* <p className="navpoppins" >Poppins</p> */}
-        </a>
-        <div className='ul' >
-          <Link className='a' className="li" to="/Signup">Signup</Link>
-          <Link className='a' className="li" to="/Login">Login</Link>
-          <Link className='a' className="li" to="/books">Books</Link>
-          <Link className='a' className="li" to="/">Home</Link>
-          <Link className='a' className='li' to="/books/:bookId"></Link>
-          <Link className='a' className='li' to="/books/booksearch"> Search Books</Link>
-        </div>
+    <nav className="nav1">
+      <a className="navicon" href="/">
+        <img src="https://i.imgur.com/dlKZbjY.png" alt="Poppins" width='50px' />
+        {/* <p className="navpoppins" >Poppins</p> */}
+      </a>
+      <div className='ul1' >
+        <Link className='a1' className="li1" to="/Signup">Signup</Link>
+        <Link className='a1' className="li1" to="/Login">Login</Link>
+        <Link className='a1' className='li1' to="/books/booksearch"> Search Books</Link>
+        <Link className='a1' className="li1" to="/books">Books</Link>
+        <Link className='a1' className="li1" to="/">Home</Link>
+        <Link className='a1' className='li1' to="/books/:bookId"></Link>
+      </div>
     </nav>
   </section>
 }

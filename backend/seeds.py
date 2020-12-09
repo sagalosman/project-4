@@ -357,8 +357,8 @@ with app.app_context():
   the_tiger_came_to_tea = Book(
     title= 'The Tiger Who Came To Tea',
     author= 'Judith Kerr',
-    description= 'His favourite was Rooibos!',
-    image= 'tbc3',
+    description= 'His favourite was Rooibosnana!',
+    image= 'https://images-na.ssl-images-amazon.com/images/I/81navSY0iUL.jpg',
     age= '6-9',
     genres= [genre_2, genre_7],
     user = admin   
@@ -429,9 +429,9 @@ with app.app_context():
 
 
   db.session.add(the_hungry_caterpillar)
-  # db.session.add(charlie_and_the_chocolate_factory)
-  # db.session.add(charlottes_web)
-  # db.session.add(harry_potter_stone)
+  db.session.add(charlie_and_the_chocolate_factory)
+  db.session.add(charlottes_web)
+  db.session.add(harry_potter_stone)
   db.session.add(the_tiger_came_to_tea)
   db.session.add(the_gruffalo)
   db.session.add(tracy_beaker)

@@ -37,7 +37,7 @@ def index():
 
   return book_schema.jsonify(books, many=True), 200
 
-# GET a single book
+# GET a single book by id
 @router.route('/books/<int:id>', methods=['GET'])
 def get_single_book(id):
   
@@ -47,6 +47,20 @@ def get_single_book(id):
     return { 'message': 'Book not found!' }, 404
 
   return populate_book.jsonify(book), 200
+
+
+# !!!!!!!!!!!!!!!!!!!GET a single book by name
+from sqlalchemy import func
+@router.route('/books/<title>', methods=['GET'])
+def get_book_by_name(title):
+
+  book = Book.query.filter_by(title=title).first()
+  # book = Book.query.filter(func.lower(Book.title) == func.lower("NaMe")).first()
+  if not book:
+    return { 'message': 'Book not found!' }, 404
+    # print('step ')
+  return populate_book.jsonify(book), 200
+
 
 # CREATE a book
 @router.route('/books', methods=['POST'])
@@ -305,12 +319,15 @@ def update_book_with_genre(book_id):
 
 # ! ROUTE TO PROXY REQUEST
 
-import requests 
+import requests
 
-@router.route('/proxy-books/:query', methods=['GET'])
-def external_books():
-  book = requests.get('http://openlibrary.org/search.json?q=query')
+
+@router.route('/proxy-books/<book_title>', methods=['GET'])
+def external_books(book_title):
+  resp = requests.get(f'http://openlibrary.org/search.json?q={book_title}')
 
   book = resp.json()
 
   return jsonify(book), 200
+
+
