@@ -25,7 +25,7 @@ const Signup = (props) => {
   function handleSubmit(event) {
     event.preventDefault()
 
-    axios.post('api/signup', formData)
+    axios.post('/api/signup', formData)
       .then(resp => {
         props.history.push('/login')
       })
@@ -34,7 +34,7 @@ const Signup = (props) => {
   return <div className="session">
     <div className="left">
     </div>
-    <form action="" className="log-in" autoComplete="off">
+    <form action="" className="log-in" autoComplete="off" onSubmit={handleSubmit}>
       <h4 className="title"><span>Poppins</span></h4>
       <p className="welcome">Create a new account:</p>
 
@@ -71,7 +71,7 @@ const Signup = (props) => {
       </div >
       
 
-      <button className="button" type="submit" onSubmit={handleSubmit}>Sign Up</button>
+      <button className="button" type="submit">Sign Up</button>
       <Link to='/login' className="discrete">Have an account? Login</Link>
     </form>
   </div>

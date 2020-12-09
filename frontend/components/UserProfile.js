@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+// import { getUserId } from ''
 
 const User = (props) => {
 
@@ -10,7 +11,7 @@ const User = (props) => {
   const [user, updateUser] = useState([])
   const [comments, updateComments] = useState([])
   const username = localStorage.getItem('username')
-  const userAvatar = localStorage.getItem('userAvatar')
+  // const userAvatar = localStorage.getItem('userAvatar')
 
   // ! Get user ID //
   useEffect(() => {
