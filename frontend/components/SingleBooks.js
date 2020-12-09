@@ -34,8 +34,12 @@ const SingleBook = (props) => {
     <div class="column-xs-12">
       <nav className='nav'>
       <div className='ol' class="breadcrumb-list">
-            <div className='li' className='a' class="breadcrumb-item"><a>Genre</a></div>
-            <div className='li' className='a' class="breadcrumb-item"><a> {book.age}</a></div>
+            <div className='li' className='a' class="breadcrumb-item">
+              {book.genres.map((genre, index) => {
+                  return <a key={index} >Genre:  {genre.genre} </a>
+              })}
+              </div>
+            <div className='li' className='a' class="breadcrumb-item"><a>Recommended Age:  {book.age}</a></div>
           </div>
       </nav>
     </div>

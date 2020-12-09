@@ -7,24 +7,16 @@ const SearchBar = (props) => {
   const [title, updateTitle] = useState('')
   const [words, updateWords] = useState('')
 
-  const [randomBooks, updateRandomBooks] = useState([])
+  const [allBooksData, updateAllBooksData] = useState([])
+
+
 
   
   const searchFunction = (title) => {
-    
-    
     if (title) {
       axios.get(`/api/books/${title}`)
         .then(resp => {
-          if (!resp.data.age) {
-            return <div className = "section">
-              <div className="container">
-                <div className="title">
-                  Loading
-                </div>
-              </div>
-            </div>
-          }
+  
           const bookId = resp.data.id
           console.log(bookId)
           updateBookData(resp.data)
@@ -47,22 +39,40 @@ const SearchBar = (props) => {
     }
   }
 
-  // console.log(words)
-  // console.log(bookData)
+  console.log(words)
+  console.log(bookData)
 
-  // // ! I will use this function to generate random books
-  // function getAllBooks(){
-  //   useEffect(() => {
-  //     axios.get('/api/books')
-  //       .then((resp) => {
-  //         updateRandomBooks(resp.data)
-  //         console.log(resp.data)
-  //       })
-  //   }, []) 
-  // }
-  // getAllBooks()
-  // console.log(randomBooks)
+  // ! I will use this function to generate random books
+  function getAllBooks(){
+    useEffect(() => {
+      axios.get('/api/books')
+        .then((resp) => {
+          updateAllBooksData(resp)
+          console.log(resp.data)
+        })
+    }, []) 
+  }
+  getAllBooks()
+  console.log(allBooksData)
+  if (!allBooksData.data) {
+    return <div className = "section">
+      <div className="container">
+        <div className="title">
+          Loading
+        </div>
+      </div>
+    </div>
+  }
+  
 
+  const allBooks = allBooksData.data
+  console.log(allBooks)
+
+  const randomIndex = Math.floor(Math.random() * allBooks.length)
+  console.log(randomIndex)
+  const randomBook = allBooks[randomIndex]
+
+  console.log(randomBook)
 
 
 
@@ -76,6 +86,11 @@ const SearchBar = (props) => {
       value = {words}
       onKeyPress = {enterKey}
     />
+
+    <div>
+      <p> { randomBook.author} </p>
+
+    </div>
 
 
   </div>
