@@ -87,11 +87,47 @@ const SearchBar = (props) => {
       onKeyPress = {enterKey}
     />
 
-    <div>
-      <p> { randomBook.author} </p>
+    {/* <div>
+      <img src = {randomBook.image} alt ={randomBook.title} />
+      <p> { randomBook.title} </p>
+      <h1>{randomBook.author} </h1>
+      <p>{randomBook.description} </p>
+
+    </div> */}
+    
+    <div class="container">
+    <div class="grid second-nav">
+    <div class="column-xs-12">
+      <nav className='nav'>
+      <div className='ol' class="breadcrumb-list">
+            <div className='li' className='a' class="breadcrumb-item">
+              {/* {book.genres.map((genre, index) => {
+                  return <a key={index} >Genre:  {genre.genre} </a>
+              })} */}
+              </div>
+            <div className='li' className='a' class="breadcrumb-item"><a>Recommended Age:  {randomBook.age}</a></div>
+          </div>
+      </nav>
+    </div>
+    </div>
+    <div class="column-xs-12 column-md-5" class="grid product">
+    <div class="column-xs-12 column-md-7">
+    <div class="product-image">
+    <img className='imagezoom' src={randomBook.image} alt={randomBook.title} />
+    </div>
+    </div>
+    </div>
+    <div class="column-xs-12 column-md-5">
+        <h1 className='h1' >{randomBook.title}</h1>
+        <h2 className='h1' >{randomBook.author}</h2>
+        <div class="description">
+          <p>{randomBook.description}</p>
+          
+        </div>
+        <button class="readmore">Read More</button>
+      </div>
 
     </div>
-
 
   </div>
 }

@@ -28,6 +28,7 @@ const App = () => {
       <Route exact path='/users/:userId' component={User} />
       <Route exact path = "/books" component = {Books} />
       <Route exact path = "/booksearch" component = {SearchBar} />
+      <Route exact path = "/user-account" component = {User} />
       <Route exact path = "/books/:bookId" component = {SingleBook} />
       
      

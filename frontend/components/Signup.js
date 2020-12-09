@@ -5,11 +5,10 @@ import { Link } from 'react-router-dom'
 const Signup = (props) => {
 
   const [formData, updateFormData] = useState({
-    firstName: '',
-    lastName: '',
+    name: '',
     username: '',
     email: '',
-    password: '',
+    password: ''
   })
 
   function handleChange(event) {
@@ -28,7 +27,7 @@ const Signup = (props) => {
 
     axios.post('api/signup', formData)
       .then(resp => {
-        props.history.push('/')
+        props.history.push('/login')
       })
   }
 
@@ -40,13 +39,13 @@ const Signup = (props) => {
       <p className="welcome">Create a new account:</p>
 
       <div className="field">
-        <label className="label">First Name</label>
+        <label className="label">Full Name</label>
         <input
           className="input" 
           type="text"
           onChange={handleChange}
-          value={formData.firstname}
-          name="firstname"
+          value={formData.name}
+          name="name"
         />
       </div>
 
@@ -66,6 +65,8 @@ const Signup = (props) => {
         <input className="input"
           type="password"
           onChange={handleChange}
+          value = {formData.password}
+          name="password"
         />
       </div >
       

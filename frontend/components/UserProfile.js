@@ -6,6 +6,7 @@ const User = (props) => {
 
   console.log(props)
   const userId = props.match.params.userId
+  console.log(userId)
   const [user, updateUser] = useState([])
   const [comments, updateComments] = useState([])
   const username = localStorage.getItem('username')
@@ -45,8 +46,8 @@ const User = (props) => {
   return <section className='background-img'>
     <div>
       <h2 className='userTitle'>Profile</h2>
-      <h2 className='userSubTitle'>{userId}</h2>
-      <h2 className='userSubTitle'>{username}</h2>
+      {/* <h2 className='userSubTitle'>{userId}</h2>
+      <h2 className='userSubTitle'>{username}</h2> */}
     </div>
   </section>
 
