@@ -1,10 +1,12 @@
 {
-  "python.pythonPath": "/Users/rebeccaacio-adea/.local/share/virtualenvs/project-4-lvxCnA1n/bin/python",
+  "python.pythonPath": "/usr/local/bin/python3",
   "cSpell.words": [
     "bcrypt",
     "booksearch",
     "ilike",
     "sagal",
     "signup"
-  ]
+  ],
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true
 }
