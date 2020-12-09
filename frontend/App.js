@@ -15,7 +15,6 @@ import SearchBar from './components/SearchBar'
 
 // import User from './components/User'
 // import User from './components/UserProfile'
-// import BookSearch from './components/BookSearch'
 import User from './components/UserProfile'
 
 const App = () => {
@@ -23,13 +22,14 @@ const App = () => {
     <Navbar/>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path = "/booksearch" component = {SearchBar} />
-
       <Route exact path="/Signup" component={Signup} />
-      <Route exact path="/Login" component={Login} />
+      <Route exact path="/login" component={Login} />
       <Route exact path='/users/:userId' component={User} />
       <Route exact path = "/books" component = {Books} />
+      <Route exact path = "/booksearch" component = {SearchBar} />
+      <Route exact path = "/user-account" component = {User} />
       <Route exact path = "/books/:bookId" component = {SingleBook} />
+      
      
     </Switch>
   </BrowserRouter>

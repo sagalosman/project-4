@@ -10,6 +10,7 @@ class User(db.Model, BaseModel):
 
   __tablename__ = 'users'
 
+  name = db.Column(db.String(75), nullable=False, unique=True)
   username = db.Column(db.String(15), nullable=False, unique=True)
   email = db.Column(db.String(128), nullable=False, unique=True)
   password_hash = db.Column(db.String(128), nullable=True)

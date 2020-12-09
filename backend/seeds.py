@@ -12,11 +12,13 @@ with app.app_context():
   db.create_all()
 
   sagal = User(
+    name = "Sagal First",
     username="sagal",
     email="sagal@sagal.com",
     password="sagal"
   )
   admin = User(
+    name = "First Admin",
     username= "admin",
     email="admin@admin.com",
     password="pass"

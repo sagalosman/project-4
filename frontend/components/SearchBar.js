@@ -7,24 +7,16 @@ const SearchBar = (props) => {
   const [title, updateTitle] = useState('')
   const [words, updateWords] = useState('')
 
-  const [randomBooks, updateRandomBooks] = useState([])
+  const [allBooksData, updateAllBooksData] = useState([])
+
+
 
   
   const searchFunction = (title) => {
-    
-    
     if (title) {
       axios.get(`/api/books/${title}`)
         .then(resp => {
-          if (!resp.data.age) {
-            return <div className = "section">
-              <div className="container">
-                <div className="title">
-                  Loading
-                </div>
-              </div>
-            </div>
-          }
+  
           const bookId = resp.data.id
           console.log(bookId)
           updateBookData(resp.data)
@@ -47,22 +39,40 @@ const SearchBar = (props) => {
     }
   }
 
-  // console.log(words)
-  // console.log(bookData)
+  console.log(words)
+  console.log(bookData)
 
   // ! I will use this function to generate random books
   function getAllBooks(){
     useEffect(() => {
       axios.get('/api/books')
         .then((resp) => {
-          updateRandomBooks(resp.data)
+          updateAllBooksData(resp)
           console.log(resp.data)
         })
     }, []) 
   }
   getAllBooks()
-  console.log(randomBooks)
+  console.log(allBooksData)
+  if (!allBooksData.data) {
+    return <div className = "section">
+      <div className="container">
+        <div className="title">
+          Loading
+        </div>
+      </div>
+    </div>
+  }
+  
 
+  const allBooks = allBooksData.data
+  console.log(allBooks)
+
+  const randomIndex = Math.floor(Math.random() * allBooks.length)
+  console.log(randomIndex)
+  const randomBook = allBooks[randomIndex]
+
+  console.log(randomBook)
 
 
 
@@ -77,6 +87,47 @@ const SearchBar = (props) => {
       onKeyPress = {enterKey}
     />
 
+    {/* <div>
+      <img src = {randomBook.image} alt ={randomBook.title} />
+      <p> { randomBook.title} </p>
+      <h1>{randomBook.author} </h1>
+      <p>{randomBook.description} </p>
+
+    </div> */}
+    
+    <div class="container">
+    <div class="grid second-nav">
+    <div class="column-xs-12">
+      <nav className='nav'>
+      <div className='ol' class="breadcrumb-list">
+            <div className='li' className='a' class="breadcrumb-item">
+              {/* {book.genres.map((genre, index) => {
+                  return <a key={index} >Genre:  {genre.genre} </a>
+              })} */}
+              </div>
+            <div className='li' className='a' class="breadcrumb-item"><a>Recommended Age:  {randomBook.age}</a></div>
+          </div>
+      </nav>
+    </div>
+    </div>
+    <div class="column-xs-12 column-md-5" class="grid product">
+    <div class="column-xs-12 column-md-7">
+    <div class="product-image">
+    <img className='imagezoom' src={randomBook.image} alt={randomBook.title} />
+    </div>
+    </div>
+    </div>
+    <div class="column-xs-12 column-md-5">
+        <h1 className='h1' >{randomBook.title}</h1>
+        <h2 className='h1' >{randomBook.author}</h2>
+        <div class="description">
+          <p>{randomBook.description}</p>
+          
+        </div>
+        <button class="readmore">Read More</button>
+      </div>
+
+    </div>
 
   </div>
 }

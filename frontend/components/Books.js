@@ -20,6 +20,7 @@ const Books = () => {
   console.log(books)
 
   return <div className = "section">
+
     {/* <h2> Books Page</h2> */}
     <div className="columns is-multiline is-mobile">
       {books.map((book, index) => {
