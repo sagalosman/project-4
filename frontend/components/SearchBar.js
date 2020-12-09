@@ -50,18 +50,18 @@ const SearchBar = (props) => {
   // console.log(words)
   // console.log(bookData)
 
-  // ! I will use this function to generate random books
-  function getAllBooks(){
-    useEffect(() => {
-      axios.get('/api/books')
-        .then((resp) => {
-          updateRandomBooks(resp.data)
-          console.log(resp.data)
-        })
-    }, []) 
-  }
-  getAllBooks()
-  console.log(randomBooks)
+  // // ! I will use this function to generate random books
+  // function getAllBooks(){
+  //   useEffect(() => {
+  //     axios.get('/api/books')
+  //       .then((resp) => {
+  //         updateRandomBooks(resp.data)
+  //         console.log(resp.data)
+  //       })
+  //   }, []) 
+  // }
+  // getAllBooks()
+  // console.log(randomBooks)
 
 
 
