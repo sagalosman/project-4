@@ -371,7 +371,7 @@ with app.app_context():
     title= 'The Gruffalo',
     author= 'Julia Donaldson',
     description= 'A rhyming story about a mouse and a monster',
-    image= 'tbc4',
+    image= 'https://i.imgur.com/xfqLCNV.jpg',
     age= '6-9',
     genres= [genre_2, genre_5, genre_7],
     user = admin    
@@ -381,7 +381,7 @@ with app.app_context():
     title= 'The Very Hungry Caterpillar',
     author= 'Eric Carle',
     description= 'Soooooo hungry!',
-    image= 'tbc5',
+    image= 'https://i.imgur.com/qxF4HQb.jpg',
     age= '6-9',
     genres= [genre_2, genre_5, genre_7],
     user = admin   
@@ -391,7 +391,7 @@ with app.app_context():
     title= 'The Twits',
     author= 'Roald Dahl',
     description= 'They really are twits',
-    image= 'tbc6',
+    image= 'https://i.imgur.com/kFmJVmi.jpg',
     age= '6-9',
     genres= [genre_2],
     user = admin    
@@ -401,7 +401,7 @@ with app.app_context():
     title= 'Codename Bananas',
     author= 'David Walliams',
     description= 'Double-O bananas',
-    image= 'tbc7',
+    image= 'https://i.imgur.com/OqM7fN7.jpg',
     age= '6-9',
     genres= [genre_2],
     user = admin    
@@ -411,7 +411,7 @@ with app.app_context():
     title= 'Stick Man',
     author= 'Julia Donaldson',
     description= 'Surprisingly scary!',
-    image= 'tbc8',
+    image= 'https://i.imgur.com/EV7xoaQ.jpg',
     age= '6-9',
     genres= [genre_2, genre_5],
     user = admin    
