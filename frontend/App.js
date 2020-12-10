@@ -12,6 +12,7 @@ import Login from './components/Login'
 import Books from './components/Books'
 import SingleBook from './components/SingleBooks'
 import SearchBar from './components/SearchBar'
+// import CreateBooks from './components/CreateBooks'
 
 // import User from './components/User'
 // import User from './components/UserProfile'
@@ -31,7 +32,7 @@ const App = () => {
       <Route exact path = "/booksearch" component = {SearchBar} />
       <Route exact path = "/user/:userId" component = {UserProfile} />
       <Route exact path = "/books/:bookId" component = {SingleBook} />
-      
+      {/* <Route exact path = "/books/create" component = {CreateBooks} /> */}
      
     </Switch>
   </BrowserRouter>
