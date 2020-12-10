@@ -7,7 +7,7 @@ const SingleBook = (props) => {
   const bookId = props.match.params.bookId
   console.log(props)
   const [book, updateBook] = useState({})
-  const [comments, updateComments] = useState(true)
+  const [likes, updateLikes] = useState(true)
 
   useEffect(()  => {
     axios.get(`/api/books/${bookId}`)
@@ -17,16 +17,16 @@ const SingleBook = (props) => {
       })
   }, [])
 
-  function handleComment() {
+  function handleLike() {
     updateText('')
-    axios.post(`/api/books/${id}/comments`, { text }, {
-      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+    axios.post(`/api/books/${id}/like`, { text }, {
+      // headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     })
       .then(resp => {
         axios.get(`/api/books/${bookid}`, {
-          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+          // headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         })
-          // .then(resp => updateBook(resp.data))
+          .then(resp => updateBook(resp.data))
       })
   }
 
@@ -59,6 +59,10 @@ const SingleBook = (props) => {
             <div className='li' className='a' class="breadcrumb-item"><a>Recommended Age:  {book.age}</a></div>
           </div>
       </nav>
+      <div className="event-num big-num" onClick={() => handleLike(likes)}>
+              <p className="event-like icon-bigger"></p> {likes.likes}
+            </div>
+            {/* <button className='heart'>{book.like}</button> */}
     </div>
     </div>
     {/* <div class="column-xs-12 column-md-5" class="grid product"> */}
