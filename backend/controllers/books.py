@@ -155,9 +155,7 @@ def comment_create(book_id):
   
   comment_data = request.get_json()
   book = Book.query.get(book_id)
-  
-  # ? This link the comment with the user posting it
-  comment_data['user_id'] = g.current_user.id
+
 
   # ? Deserialization step
   try: 
@@ -200,18 +198,18 @@ def update_comment(book_id, comment_id):
 
 # DELETE a comment
 @router.route('/books/<int:book_id>/comments/<int:comment_id>', methods=['DELETE'])
-def remove_comment(book_id, comment_id):
+def remove_like(book_id, comment_id):
   book = Book.query.get(book_id)
-  comment = Comment.query.get(comment_id)
+  like = Like.query.get(like_id)
 
-  if not comment:
+  if not like:
     return { 'message': 'Comment not found!' }, 404
 
-  comment.book = book
+  like.book = book
 
-  comment.remove()
+  like.remove()
 
-  return { 'message': f'Comment {comment_id} --deleted successfully '}, 200
+  return { 'message': f'Comment {like_id} --deleted successfully '}, 200
 
 
 # !  ROUTES FOR GENRES
@@ -317,7 +315,5 @@ def external_books(book_title):
   book = resp.json()
 
   return jsonify(book), 200
-
-
 
 

@@ -109,7 +109,7 @@ def remove_user(user_id):
 
   # !  GET ALL BOOKS by user
 
-@router.route('/users-books/<int:user_id>', methods=['GET'])
+@router.route('/user-books/<int:user_id>', methods=['GET'])
 def get_all_books_by_user(user_id):
 
   user = User.query.get(user_id)
