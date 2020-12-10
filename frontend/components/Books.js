@@ -22,10 +22,6 @@ const Books = (props) => {
   }, [])
 ​
   console.log(books)
-<<<<<<< HEAD
-​
-  return <div className = "section">
-=======
 
 
     
@@ -67,7 +63,6 @@ return <div className = "section">
     />
      <button className='searchbtn' type="submit">Go</button> 
     </form>
->>>>>>> development
 ​
     {/* <h2> Books Page</h2> */}
     <div className="columns is-multiline is-mobile">
