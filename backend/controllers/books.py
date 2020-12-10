@@ -156,6 +156,7 @@ def comment_create(book_id):
   comment_data = request.get_json()
   book = Book.query.get(book_id)
 
+  comment_data['user_id']= g.current_user.id
 
   # ? Deserialization step
   try: 

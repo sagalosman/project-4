@@ -1,13 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { isCreator } from '../lib/auth'
+import Bulma from 'bulma'
 
 
 const SingleBook = (props) => {
+  const token = localStorage.getItem('token')
 
   const bookId = props.match.params.bookId
-  console.log(props)
+  console.log(bookId)
   const [book, updateBook] = useState({})
-  const [comments, updateComments] = useState(true)
+  const [text, setText] = useState('')
+  const [messages, updateMessages] = useState([])
+
+  // ! A function to reload the page
+
+  const refreshPage = () => {
+    window.location.reload()
+  }
 
   useEffect(()  => {
     axios.get(`/api/books/${bookId}`)
@@ -16,19 +26,21 @@ const SingleBook = (props) => {
         console.log(resp.data)
       })
   }, [])
-
-  function handleComment() {
-    updateText('')
-    axios.post(`/api/books/${id}/comments`, { text }, {
-      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+  
+  function handleComment(bookId) {
+    axios.post(`/api/books/${bookId}/comments`, { text }, {
+      headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
-        axios.get(`/api/books/${bookid}`, {
-          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-        })
-          // .then(resp => updateBook(resp.data))
+        setText('')
+        
+        // updateBook(resp.data)
+        updateMessages(resp.data)
       })
+    // refreshPage()
   }
+
+  console.log(messages)
 
 
 
@@ -51,8 +63,9 @@ const SingleBook = (props) => {
     <div class="column-xs-12">
       <nav className='nav'>
       <div className='ol' class="breadcrumb-list">
+        
             <div className='li' className='a' class="breadcrumb-item">
-              {book.genres.map((genre, index) => {
+              {book.genres && book.genres.map((genre, index) => {
                   return <a key={index} >Genre:  {genre.genre} </a>
               })}
               </div>
@@ -67,12 +80,20 @@ const SingleBook = (props) => {
     <div className="columns is-multiline is-mobile">
     <div className="column is-one-third-desktop is-half-tablet is-half-mobile"></div>
     <img className='imagezoom' src={book.image} alt={book.title} />
-    <div class="description">
+    <div className="description">
         <h1 className='h2' >{book.title}</h1>
         <h2 className='h1' >{book.author}</h2>
         
           <p>{book.description}</p>
-          <button class="readmore"><a href ={book.read}> Read More </a></button>
+          <button className="readmore"><a href ={book.read}> Read More </a></button>
+          {/* COMMENTS */}
+          <h2 style ={{ fontSize: '24px', fontWeight: 'bolder', textDecorationLine: 'underline' }} > COMMENTS </h2>
+          {book.comments && book.comments.map((comment, index) =>{
+
+            return <div key={index} style={{ marginTop: '5px', marginLeft: '20px' }} >
+              <p style={{ fontSize: '15px' }} >{ comment.content } </p>
+            </div>
+          })} 
         </div>
     </div>
     
@@ -82,8 +103,18 @@ const SingleBook = (props) => {
     {/* </div> */}
     <div className="one-event-comments">
         <div className="add-comment">
-          <textarea  className="textarea" placeholder="Add a comment..."></textarea>
+          <textarea  
+            className="textarea" 
+            placeholder="Add a comment..."
+            value={text[book.id]}
+            name="content"
+          >
+          </textarea>
         </div>
+        <button
+          style ={{ backgroundColor: 'yellow', height: '40px', fontSize: '20px' }}
+          onClick = {() => handleComment(bookId)}> Submit Your Comment
+        </button>
       </div>
     {/* <div class="column-xs-12 column-md-5"> */}
     </div>
