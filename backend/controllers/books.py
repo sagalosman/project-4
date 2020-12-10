@@ -321,7 +321,7 @@ def external_books(book_title):
   return jsonify(book), 200
 
 
-<<<<<<< HEAD
+
 @router.route('/books/<int:book_id>/likes/add', methods=['POST'])
 
 def like_create(book_id):
@@ -337,16 +337,16 @@ def like_create(book_id):
    # ? Serialization step
   return like_schema.jsonify(like), 200
 
-@router.route('/books/<int:book_id>/likes/remove/<int:like_id>', methods=['DELETE'])
+# @router.route('/books/<int:book_id>/likes/remove/<int:like_id>', methods=['DELETE'])
 
-def remove_like(book_id, like_id):
-  book = Book.query.get(book_id)
-  like = Like.query.get(like_id)
-  if not like:
-    return { 'message': 'Like not found!' }, 404
-  like.book = book
-  like.remove()
-  return { 'message': f'Like {like_id} --deleted successfully '}, 200
+# def remove_like(book_id, like_id):
+#   book = Book.query.get(book_id)
+#   like = Like.query.get(like_id)
+#   if not like:
+#     return { 'message': 'Like not found!' }, 404
+#   like.book = book
+#   like.remove()
+#   return { 'message': f'Like {like_id} --deleted successfully '}, 200
 
 # router.route('/events/:eventId/likes/remove')
 #   .put(secureRoute, eventController.removeLike)
@@ -354,5 +354,4 @@ def remove_like(book_id, like_id):
 # router.route('/events/:eventId/likes/add')
 #   .put(secureRoute, eventController.addLike)
 
-=======
->>>>>>> development
+
