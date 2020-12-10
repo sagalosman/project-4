@@ -44,7 +44,7 @@ const SearchBar = (props) => {
 
 
   return <div>
-    <h2> Search Bar </h2>
+    {/* <h2> Search Bar </h2> */}
 
     <input className="search-bar"
       placeholder="Enter the book name ..."
@@ -52,7 +52,7 @@ const SearchBar = (props) => {
       value = {words}
       onKeyPress = {enterKey}
     />
-
+   return <div>{book.title}</div>
 
   </div>
 }
