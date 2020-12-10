@@ -321,7 +321,6 @@ def external_books(book_title):
   return jsonify(book), 200
 
 
-<<<<<<< HEAD
 @router.route('/books/<int:book_id>/likes/add', methods=['POST'])
 
 def like_create(book_id):
@@ -354,5 +353,3 @@ def remove_like(book_id, like_id):
 # router.route('/events/:eventId/likes/add')
 #   .put(secureRoute, eventController.addLike)
 
-=======
->>>>>>> development
