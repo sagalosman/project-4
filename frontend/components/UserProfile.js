@@ -1,80 +1,71 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-// import { getUserId } from ''
+import { getUserId } from '../lib/auth'
 
-const User = (props) => {
+const UserProfile = (props) => {
+  // console.log(props)
+  const token = localStorage.getItem('token')
 
-  console.log(props)
-  const userId = props.match.params.userId
-  console.log(userId)
-  const [user, updateUser] = useState([])
-  const [comments, updateComments] = useState([])
-  const username = localStorage.getItem('username')
-  // const userAvatar = localStorage.getItem('userAvatar')
 
-  // ! Get user ID //
+  const [user, updateUser] = useState({})
+  const [userBooks, updateUserBooks] = useState([])
+
+
   useEffect(() => {
-    axios.get(`/api/users/${userId}`)
+    axios.get(`/api/users/${getUserId()}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
       .then(resp => {
         updateUser(resp.data)
-        console.log(resp.data)
+
+      })
+  }, [])
+  console.log(user)
+
+  useEffect(() => {
+    axios.get(`/api/user-books/${getUserId()}`)
+      .then(resp => {
+        updateUserBooks(resp.data)
       })
   }, [])
 
-  // ! Get user's comments //
-  //! This is the route to get all the comments associated with the book
-  //@router.route('/books/<int:book_id>/comments/<int:comment_id>', methods=['GET'])
-  //useEffect(() => {
-  //  axios.get(`/api/users/${userId}/comments`)
-  //    .then(resp => {
-  //      updateComments(resp.data)
-  //    })
-  //}, [])
+  console.log(userBooks)
 
   // ! Loading screen //
-  //  if (!user.username) {
-  //    return <div className="section">
-  //      <div className="container">
-  //        <div className="title">
-  //          Loading ...
-  //        </div>
-  //        <progress className="progress is-small is-link" max="100">80%</progress>
-  //      </div>
-  //    </div>
-  //  }
+  if (!user.username) {
+    return <div className="section">
+      <div className="container">
+        <div className="title">
+          Loading ...
+        </div>
+        <progress className="progress is-small is-link" max="100">80%</progress>
+      </div>
+    </div>
+  }
 
-  return <section className='background-img'>
+  return <section style={{ marginLeft: '40px'}}>
     <div>
-      <h2 className='userTitle'>Profile</h2>
-      {/* <h2 className='userSubTitle'>{userId}</h2>
-      <h2 className='userSubTitle'>{username}</h2> */}
+      <h2>Welcome {user.name} !</h2>
+      <h2 >{user.username}</h2> 
+    </div>
+
+    <div>
+      {userBooks.books && userBooks.books.map((book,index) => {
+        return <div key={index}  >
+          <div style={{ marginTop: '100px'}} className= "card" >
+            <img src={book.image}  alt={book.title} style={{ height: '40%', width: '40%' }} />
+            <h2 style={{ fontSize: '24px' }}>{book.title} </h2>
+            <p style={{ fontSize: '14px' }} >{book.author} </p>
+
+          </div>
+
+        </div>
+      })}
+
     </div>
   </section>
 
-  //  {/* Load the user's comments and avatar */}
-  //  <div>
-  //    {comments[0] && <div>
-  //      <h2 className='userComments'>{user.username}'s comments:</h2>
-  //      <div>
-  //        {comments.map(comment => {
-  //          return <div key={comment.comment._id}>
-  //            <figure>
-  //              <p>
-  //                <img src={userAvatar} />
-  //              </p>
-  //            </figure>
-  //            <div>
-  //              <p>
-  //                {comment.comment.text}
-  //              </p>
-  //            </div>
-  //          </div>
-  //        })}
-  //      </div>
-  //    </div>}
-  //  </div>
-
 }
 
-export default User
+export default UserProfile
