@@ -51,6 +51,7 @@ def get_single_book(id):
 
 # !!!!!!!!!!!!!!!!!!!GET a single book by name
 from sqlalchemy import func
+
 @router.route('/books/<title>', methods=['GET'])
 def get_book_by_name(title):
 
@@ -170,19 +171,6 @@ def comment_create(book_id):
 
    # ? Serialization step
   return comment_schema.jsonify(comment), 200
-
-
-  #! # ###  UPDATE comments associated with a book  ####
-  # @router.route('/books/<int:book_id>/comments/<int:comment_id>', methods=['PUT'])
- 
-
-
-  #! ####  DELETE comments associated with a book ####
-
-  # @router.route('/books/<int:book_id>/comments/<int:comment_id>', methods=['DELETE'])
-  # def get_comments(book_id):
-
-  
 
 
 
@@ -329,5 +317,7 @@ def external_books(book_title):
   book = resp.json()
 
   return jsonify(book), 200
+
+
 
 

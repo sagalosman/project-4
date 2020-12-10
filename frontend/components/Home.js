@@ -6,7 +6,7 @@ import axios from 'axios'
 
 
 const Home = () => {
-  const [user, updateUser] = useState([])
+  const [user, updateUser] = useState({})
   console.log(user)
   const token = localStorage.getItem('token')
 
