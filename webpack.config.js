@@ -13,8 +13,7 @@ module.exports = () => {
     entry: './frontend/index.js',
     output: {
       filename: 'bundle.js',
-      path: path.resolve('backend/dist'),
-      publicPath: '/',
+      path: path.resolve('backend/dist')
     },
     devtool: 'source-map',
     module: {

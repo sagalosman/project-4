@@ -1,3 +1,4 @@
-db_URI = 'postgres://localhost:5432/books_db'
+import os
 
-secret = 'This is our secret book code'
+db_URI = os.getenv('DATABASE_URL', 'postgres://localhost:5432/books_db')
+secret = os.getenv('SECRET', 'This is our secret book code')
