@@ -71,7 +71,7 @@ const Signup = (props) => {
       </div >
       
 
-      <button className="button" type="submit">Sign Up</button>
+      <button className="buttonsl" type="submit" onClick={handleSubmit}>Sign up</button>
       <Link to='/login' className="discrete">Have an account? Login</Link>
     </form>
   </div>

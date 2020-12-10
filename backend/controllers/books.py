@@ -9,12 +9,15 @@ from serializers.genre import GenreSchema
 from serializers.populate_genre import PopulateGenreSchema
 from middleware.secure_route import secure_route
 from marshmallow import ValidationError
+from serializers.like import LikeSchema
+from models.like import Like
 
 
 
 
 book_schema = BookSchema()
 populate_book = PopulateBookSchema()
+like_schema = LikeSchema()
 
 comment_schema = CommentSchema()
 
@@ -155,9 +158,8 @@ def comment_create(book_id):
   
   comment_data = request.get_json()
   book = Book.query.get(book_id)
-  
-  # ? This link the comment with the user posting it
-  comment_data['user_id'] = g.current_user.id
+
+  comment_data['user_id']= g.current_user.id
 
   # ? Deserialization step
   try: 
@@ -200,18 +202,18 @@ def update_comment(book_id, comment_id):
 
 # DELETE a comment
 @router.route('/books/<int:book_id>/comments/<int:comment_id>', methods=['DELETE'])
-def remove_comment(book_id, comment_id):
+def remove_like(book_id, comment_id):
   book = Book.query.get(book_id)
-  comment = Comment.query.get(comment_id)
+  like = Like.query.get(like_id)
 
-  if not comment:
+  if not like:
     return { 'message': 'Comment not found!' }, 404
 
-  comment.book = book
+  like.book = book
 
-  comment.remove()
+  like.remove()
 
-  return { 'message': f'Comment {comment_id} --deleted successfully '}, 200
+  return { 'message': f'Comment {like_id} --deleted successfully '}, 200
 
 
 # !  ROUTES FOR GENRES
@@ -319,5 +321,38 @@ def external_books(book_title):
   return jsonify(book), 200
 
 
+<<<<<<< HEAD
+@router.route('/books/<int:book_id>/likes/add', methods=['POST'])
 
+def like_create(book_id):
+  like_data = request.get_json()
+  book = Book.query.get(book_id)
+  # ? Deserialization step
+  try:
+    like = like_schema.load(like_data)
+  except ValidationError as e:
+    return { 'errors': e.messages, 'message': 'Something went wrong!' }
+  like.book = book
+  like.save()
+   # ? Serialization step
+  return like_schema.jsonify(like), 200
 
+@router.route('/books/<int:book_id>/likes/remove/<int:like_id>', methods=['DELETE'])
+
+def remove_like(book_id, like_id):
+  book = Book.query.get(book_id)
+  like = Like.query.get(like_id)
+  if not like:
+    return { 'message': 'Like not found!' }, 404
+  like.book = book
+  like.remove()
+  return { 'message': f'Like {like_id} --deleted successfully '}, 200
+
+# router.route('/events/:eventId/likes/remove')
+#   .put(secureRoute, eventController.removeLike)
+
+# router.route('/events/:eventId/likes/add')
+#   .put(secureRoute, eventController.addLike)
+
+=======
+>>>>>>> development

@@ -10,12 +10,12 @@ const Navbar = () => {
         {/* <p className="navpoppins" >Poppins</p> */}
       </a>
       <div className='ul1' >
-        <Link className='a1' className="li1" to="/signup">Signup</Link>
-        <Link className='a1' className="li1" to="/login">Login</Link>
-        <Link className='a1' className='li1' to="/booksearch"> Search Books</Link>
+        <Link className='a1' className="li1" to="/login" to="/signup">Signup/Login</Link>
+        {/* <Link className='a1' className="li1" to="/login">Login</Link> */}
+        {/* <Link className='a1' className='li1' to="/booksearch"> Search Books</Link> */}
         <Link className='a1' className="li1" to="/books">Books</Link>
         <Link className='a1' className='li1' to="/users/myaccount">My Account</Link>
-        <Link className='a1' className="li1" to="/">Home</Link>
+        {/* <Link className='a1' className="li1" to="/">Home</Link> */}
         {/* <Link className='a1' className='li1' to="/books/:bookId"></Link> */}
         
       </div>
