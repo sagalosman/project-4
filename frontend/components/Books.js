@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Bulma from 'bulma'
 import SearchBar from './SearchBar'
-
-
+​
+​
 const Books = () => {
-
+​
   const [books, updateBooks] = useState([])
-
+​
   useEffect(() => {
     axios.get('/api/books')
       .then((resp) => {
@@ -16,11 +16,11 @@ const Books = () => {
         console.log(resp.data)
       })
   }, [])
-
+​
   console.log(books)
-
+​
   return <div className = "section">
-
+​
     {/* <h2> Books Page</h2> */}
     <div className="columns is-multiline is-mobile">
       {books.map((book, index) => {
@@ -67,5 +67,6 @@ const Books = () => {
     </div>
    </div>
 }
-
+​
 export default Books
+Collapse
