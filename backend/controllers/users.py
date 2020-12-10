@@ -1,10 +1,17 @@
 from flask import Blueprint, request, g, jsonify
 from models.user import User
+from models.book import Book
 from serializers.user import UserSchema
+from serializers.populate_user import PopulateUserSchema
+from serializers.populate_book import PopulateBookSchema 
 from middleware.secure_route import secure_route
 from marshmallow import ValidationError
 
+
 user_schema = UserSchema()
+populate_user = PopulateUserSchema()
+
+populate_book = PopulateBookSchema()
 
 router = Blueprint(__name__, 'users')
 
@@ -99,4 +106,15 @@ def remove_user(user_id):
   return { 'message': f'User {user_id} ---deleted successfully '}, 200
 
 
+
+  # !  GET ALL BOOKS by user
+
+@router.route('/users-books/<int:user_id>', methods=['GET'])
+def get_all_books_by_user(user_id):
+
+  user = User.query.get(user_id)
+
+  if not user:
+    return { 'message': 'User not found!' }, 404
+  return populate_user.jsonify(user), 200
 

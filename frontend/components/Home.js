@@ -6,9 +6,9 @@ import axios from 'axios'
 
 
 const Home = () => {
-  // const [user, updateUser] = useState([])
-  // console.log(user)
-  // const token = localStorage.getItem('token')
+  const [user, updateUser] = useState({})
+  console.log(user)
+  const token = localStorage.getItem('token')
 
   // useEffect(() => {
   //   axios.get(`/api/users/${getUserId()}`, {
