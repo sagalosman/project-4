@@ -13,6 +13,7 @@ class Book(db.Model, BaseModel):
   description = db.Column(db.Text, nullable=False)
   image = db.Column(db.String(600), nullable=False)
   age = db.Column(db.String(400), nullable = False)
+  read = db.Column(db.String(800), nullable = False)
 
 
   # ! This code in M-M Relationships

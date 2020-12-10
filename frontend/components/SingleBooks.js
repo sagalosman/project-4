@@ -7,6 +7,7 @@ const SingleBook = (props) => {
   const bookId = props.match.params.bookId
   console.log(props)
   const [book, updateBook] = useState({})
+  const [comments, updateComments] = useState(true)
 
   useEffect(()  => {
     axios.get(`/api/books/${bookId}`)
@@ -15,6 +16,22 @@ const SingleBook = (props) => {
         console.log(resp.data)
       })
   }, [])
+
+  function handleComment() {
+    updateText('')
+    axios.post(`/api/books/${id}/comments`, { text }, {
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+    })
+      .then(resp => {
+        axios.get(`/api/books/${bookid}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        })
+          // .then(resp => updateBook(resp.data))
+      })
+  }
+
+
+
 
   console.log(book)
   if (!book.title) {
@@ -44,24 +61,37 @@ const SingleBook = (props) => {
       </nav>
     </div>
     </div>
-    <div class="column-xs-12 column-md-5" class="grid product">
-    <div class="column-xs-12 column-md-7">
-    <div class="product-image">
+    {/* <div class="column-xs-12 column-md-5" class="grid product"> */}
+    {/* <div class="column-xs-12 column-md-7"> */}
+    {/* <div class="product-image"> */}
+    <div className="columns is-multiline is-mobile">
+    <div className="column is-one-third-desktop is-half-tablet is-half-mobile"></div>
     <img className='imagezoom' src={book.image} alt={book.title} />
-    </div>
-    </div>
-    </div>
-    <div class="column-xs-12 column-md-5">
-        <h1 className='h1' >{book.title}</h1>
+    <div class="description">
+        <h1 className='h2' >{book.title}</h1>
         <h2 className='h1' >{book.author}</h2>
-        <div class="description">
+        
           <p>{book.description}</p>
-          
+          <button class="readmore"><a href ={book.read}> Read More </a></button>
         </div>
-        <button class="readmore">Read More</button>
-      </div>
-
     </div>
+    
+        
+    {/* </div> */}
+    {/* </div> */}
+    {/* </div> */}
+    <div className="one-event-comments">
+        <div className="add-comment">
+          <textarea  className="textarea" placeholder="Add a comment..."></textarea>
+        </div>
+      </div>
+    {/* <div class="column-xs-12 column-md-5"> */}
+    </div>
+
+      {/* </div> */}
+      {/* </div> */}
+
+  
   </main>
   
  
