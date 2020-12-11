@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { getUserId } from '../lib/auth'
 
 const UserProfile = (props) => {
-  // console.log(props)
+  console.log(props)
   const token = localStorage.getItem('token')
 
 
@@ -46,6 +46,7 @@ const UserProfile = (props) => {
 
   return <section style={{ marginLeft: '40px' }}>
     <div>
+      <h2> hello</h2>
       <h2>Welcome {user.name} !</h2>
       <h2 >{user.username}</h2> 
     </div>

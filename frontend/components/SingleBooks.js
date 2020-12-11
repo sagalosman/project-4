@@ -10,7 +10,7 @@ const SingleBook = (props) => {
   const bookId = props.match.params.bookId
   console.log(bookId)
   const [book, updateBook] = useState({})
-  const [text, setText] = useState('')
+  const [content, setContent] = useState('')
   const [messages, updateMessages] = useState([])
 
   // ! A function to reload the page
@@ -28,16 +28,16 @@ const SingleBook = (props) => {
   }, [])
 
   function handleComment(bookId) {
-    axios.post(`/api/books/${bookId}/comments`, { text }, {
+    axios.post(`/api/books/${bookId}/comments`, { content }, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
-        setText('')
+        setContent('')
 
         // updateBook(resp.data)
         updateMessages(resp.data)
       })
-    // refreshPage()
+    refreshPage()
   }
 
   console.log(messages)
@@ -105,21 +105,22 @@ const SingleBook = (props) => {
       {/* </div> */}
       {/* </div> */}
       {/* </div> */}
-      <div className="one-event-comments">
-        <div className="add-comment">
+      {/* <div className="one-event-comments"> */}
+        {/* <div className="add-comment"> */}
           <textarea
             className="textarea"
             placeholder="Add a comment..."
-            value={text[book.id]}
+            onChange={event => setContent(event.target.value)}
+            value={content[book._id]}
             name="content"
           >
           </textarea>
-        </div>
+        {/* </div> */}
         <button
           style={{ backgroundColor: 'yellow', height: '40px', fontSize: '20px' }}
           onClick={() => handleComment(bookId)}> Submit Your Comment
         </button>
-      </div>
+      {/* </div> */}
       {/* <div class="column-xs-12 column-md-5"> */}
     </div>
 
