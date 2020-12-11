@@ -56,12 +56,12 @@ return <div className = "section">
   <form onsubmit="event.preventDefault();" role="search">
   
   <input id="search" type="search" className='input1'
-      placeholder="Enter the book name ..." autofocus required
+      placeholder="Enter the book name ..." required
       onChange = {(event) => updateWords(event.target.value)}
       value = {words}
       onKeyPress = {enterKey}
     />
-     <button className='searchbtn' type="submit">Go</button> 
+     <button className='searchbtn' onClick={enterKey} type="submit">Go</button> 
     </form>
 ​
     {/* <h2> Books Page</h2> */}

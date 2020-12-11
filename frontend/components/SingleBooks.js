@@ -72,9 +72,9 @@ const SingleBook = (props) => {
             <div className='li' className='a' class="breadcrumb-item"><a>Recommended Age:  {book.age}</a></div>
           </div>
       </nav>
-      <div className="event-num big-num" onClick={() => handleLike(likes)}>
+      {/* <div className="event-num big-num" onClick={() => handleLike(likes)}>
               <p className="event-like icon-bigger"></p> {likes.likes}
-            </div>
+            </div> */}
             {/* <button className='heart'>{book.like}</button> */}
     </div>
     </div>
@@ -116,7 +116,8 @@ const SingleBook = (props) => {
           </textarea>
         </div>
         <button
-          style ={{ backgroundColor: 'yellow', height: '40px', fontSize: '20px' }}
+        className="buttonsl"
+          // style ={{ backgroundColor: 'yellow', height: '40px', fontSize: '20px' }}
           onClick = {() => handleComment(bookId)}> Submit Your Comment
         </button>
       </div>
