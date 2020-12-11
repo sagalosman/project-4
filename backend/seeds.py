@@ -11,27 +11,40 @@ with app.app_context():
   db.drop_all()
   db.create_all()
 
-  sagal = User(
-    name = "Sagal First",
+  sagal = User (
+    name = "Sagal Osman",
     username="sagal",
     email="sagal@sagal.com",
     password="sagal"
   )
-  admin = User(
+  
+  admin = User (
     name = "First Admin",
     username= "admin",
     email="admin@admin.com",
     password="pass"
   )
 
+  becky = User (
+    name = "Becky Acio-Adea",
+    username= "becky",
+    email="becky@becky.com",
+    password="pass"
+  )
+
+  james = User (
+    name = "James Bolton",
+    username= "james",
+    email="james@james.com",
+    password="pass"
+  )
+
   admin.save()
   sagal.save()
+  becky.save()
+  james.save()
 
   print('Users created')
-
-
-
-
   print('Age groups created!')
 
   genre_1 = Genre(genre='Education')
@@ -42,10 +55,9 @@ with app.app_context():
   genre_6 = Genre(genre='Science Fiction')
   genre_7 = Genre(genre='Picture Book')
 
-
   print('Genres created!')
 
-  tracy_beaker = Book(
+  tracy_beaker = Book (
     title= 'Starring Tracy Beaker',
     author= 'Jacqueline Wilson',
     description= 'Tracy is a orphan who lives in a Childrens Home which she calls in her point of view "The Dumping Ground". She plans on becoming an actress just like her Hollywood mum, and she plans to make a start with this great opportunity. She desperately wants her mum to come and watch her acting Scrooge.',
@@ -55,7 +67,8 @@ with app.app_context():
     user = admin,
     read = 'https://books.google.co.uk/books?id=aTt0e_DB2tAC&printsec=frontcover&dq=Starring+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwivkv2mwcDtAhXE'
   )
-  hetty_feather = Book(
+
+  hetty_feather = Book (
     title= 'Hetty Feather',
     author= 'Jacqueline Wilson',
     description= 'The book is about a girl named Hetty Feather who goes through a hard childhood. Hetty is abandoned by her mother as a newborn baby and is left at the Foundling Hospital. Hetty is given to a foster family and returns to the Foundling Hospital when she is six years old.',
@@ -65,7 +78,8 @@ with app.app_context():
     user = admin,
     read = 'https://books.google.co.uk/books?id=FRPz5DkfvfwC&printsec=frontcover&dq=Hetty+Feather&hl=en&sa=X&ved=2ahUKEwjIiNq9wcDtAhWTunEKHdP6CN0Q6AEwAHoECAEQAg#v=onepage&q=Hetty%20Feather&f=false'
   )
-  tracy_beaker2 = Book(
+
+  tracy_beaker2 = Book (
     title= 'The Story of Tracy Beaker',
     author= 'Jacqueline Wilson',
     description= 'Tracy Beaker is a funny, imaginative and articulate ten-year-old girl, but she can also be angry, impulsive and a bit violent too. Tracy lives in a childrens home but constantly hopes that her absent, glamorous mum will come and take her away. One day Cam visits the home, to write a piece on the children.',
@@ -75,7 +89,8 @@ with app.app_context():
     user = admin,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  double_act = Book(
+
+  double_act = Book (
     title= 'Double Act',
     author= 'Jacqueline Wilson',
     description= 'The book takes the form of the twins alternately narrating the story of their life in an Accounts book. Ruby and Garnet are ten-year-old identical twins living with their father and grandmother since their mother, Opal, died.',
@@ -85,7 +100,8 @@ with app.app_context():
     user = admin,
     read = 'https://books.google.co.uk/books?id=-3bt_noxhxkC&printsec=frontcover&dq=Double+Act&hl=en&sa=X&ved=2ahUKEwj-9vCDxsDtAhVBrHEKHV_6A8cQ6wEwAHoECAYQAQ#v=onepage&q=Double%20Act&f=false'
   )
-  best_friends = Book(
+
+  best_friends = Book (
     title= 'Best Friends',
     author= 'Jacqueline Wilson',
     description= 'Gemma and Alice have known each other all their lives, but when Gemma reads Alices diary at a sleepover, it eventually leads her to discover Alice is moving. Because of their distance, Gemma and Alice struggle to stay friends, with the possibility of each other making new friends.',
@@ -96,40 +112,40 @@ with app.app_context():
     read = 'https://books.google.co.uk/books?id=43EsiVMSbIMC&printsec=frontcover&dq=Best+Friends+wilson&hl=en&sa=X&ved=2ahUKEwji1LijxsDtAhXlXhUIHUbwB3AQ6wEwAHoECAUQAQ#v=onepage&q=Best%20Friends%20wilson&f=false'
   )
 
-  cat_in_the_hat = Book(
+  cat_in_the_hat = Book (
     title= 'Cat in the Hat',
     author= 'Dr Seuss',
     description= 'The Cat in the Hat is a book where an eccentric stranger visits two children, Sally and Sam, who are home alone and having a very dull day. Their mother is out, and when the Cat comes in, he reassures the kids that their mother wont mind him or his tricks!',
     image= 'https://cdn.waterstones.com/bookjackets/large/9780/0073/9780007348695.jpg',
     age= '6-9',
     genres= [genre_2],
-    user = admin,
+    user = sagal,
     read = 'https://books.google.co.uk/books?id=2fY9DwAAQBAJ&printsec=frontcover&dq=Cat+in+the+Hat&hl=en&sa=X&ved=2ahUKEwjcr97TxsDtAhU3QkEAHaELAVQQ6wEwAXoECAkQAQ#v=onepage&q=Cat%20in%20the%20Hat&f=false'
   )
-  green_eggs_and_ham = Book(
+
+  green_eggs_and_ham = Book (
     title= 'Green Eggs and Ham',
     author= 'Dr Seuss',
     description= 'Green Eggs and Ham is a much-loved classic by Dr. Seuss, which is not only fun to read but also raises important questions about the relationship between beliefs and experiences. Sam-I-Am spends the entire book offering green eggs and ham to the narrator, who adamantly refuses to try the delicacy because he does not like Sam-I-Am. Sam-I-Am offers to serve the dish in a number of different locations with a number of different partners. However, his persistence does not succeed until the very end, when the narrator finally caves in and tries it, only to find he loves it, and will eat it anywhere and with anyone. He also overcomes his dislike for Sam-I-Am.',
     image= 'https://images-na.ssl-images-amazon.com/images/I/51Q7ZVHDFlL.jpg',
     age= '6-9',
     genres= [genre_2],
-    user = admin,
+    user = sagal,
     read = 'https://books.google.co.uk/books?id=3_Y9DwAAQBAJ&printsec=frontcover&dq=Green+Eggs+and+Ham&hl=en&sa=X&ved=2ahUKEwjH87GWy8DtAhWMgVwKHeAHDVMQ6wEwAHoECAAQAQ#v=onepage&q=Green%20Eggs%20and%20Ham&f=false'
   )
-  how_the_grinch_stole_christmas = Book(
+
+  how_the_grinch_stole_christmas = Book (
     title= 'How the Grinch Stole Christmas!',
     author= 'Dr Seuss',
     description= 'The Grinch, a grouchy, cave-dwelling creature, hates Christmas; his only companion is his unloved but loyal dog, Max. ... From his cave, the Grinch can hear the noisy Christmas festivities that take place in Whoville. Continually annoyed, he devises a wicked scheme to steal their presents, trees, and Christmas food.',
     image= 'https://images-na.ssl-images-amazon.com/images/I/81SJew0hSOL.jpg',
     age= '6-9',
     genres= [genre_2],
-    user = admin,
+    user = sagal,
     read = 'https://books.google.co.uk/books?id=1fY9DwAAQBAJ&printsec=frontcover&dq=Green+Eggs+and+How+the+Grinch+Stole+Christmas!&hl=en&sa=X&ved=2ahUKEwjs5tOmy8DtAhXUiVwKHR7zBVAQ6wEwAHoECAYQAQ#v=onepage&q&f=false'
   )
 
-
-
-  one_fish_two_fish = Book(
+  one_fish_two_fish = Book (
     title= 'One fish, two fish, red fish, blue fish',
     author= 'Dr Seuss',
     description= 'One Fish Two Fish Red Fish Blue Fish is a 1960 childrens book by Dr. Seuss (Theodor Seuss Geisel). A simple rhyming book for learner readers, it is a book with a freewheeling plot about a boy and a girl, and the many amazing creatures they have for friends and pets. One Fish Two Fish Red Fish Blue Fish was part of the Beginner Book Video series which included Oh, the Thinks You Can Think! and The Foot Book.',
@@ -139,27 +155,30 @@ with app.app_context():
     user = admin,
     read = 'https://www.google.co.uk/books/edition/_/2_Y9DwAAQBAJ?hl=en&gbpv=1'
   )
-  oh_the_places_you_will_go = Book(
+
+  oh_the_places_you_will_go = Book (
     title= 'Oh, the Places You Will Go!',
     author= 'Dr Seuss',
     description= 'Oh, the Places Youll Go! is a book written and illustrated by childrens author Dr. Seuss. It was first published by Random House on January 22, 1990. It was his last book to be published during his lifetime. The book concerns the journey of life and its challenges.',
     image= 'https://images-na.ssl-images-amazon.com/images/I/51HY300joCL._SX364_BO1,204,203,200_.jpg',
     age= '6-9',
     genres= [genre_2],
-    user = admin,
+    user = becky,
     read = 'https://www.google.co.uk/books/edition/Oh_The_Places_You_ll_Go/1_Y9DwAAQBAJ?hl=en&gbpv=1&dq=Oh,+the+Places+You%27ll+Go!&printsec=frontcover'
   )
-  fox_in_socks = Book(
+
+  fox_in_socks = Book (
     title= 'Fox in Socks',
     author= 'Dr Seuss',
     description= 'Fox in Socks is a childrens book by Dr. Seuss, first published in 1965. It features two main characters, Fox (an anthropomorphic fox) who speaks almost entirely in densely rhyming tongue-twisters and Knox (a yellow anthropomorphic character) who has a hard time following up Foxs tongue-twisters until the end.',
     image= 'https://images-eu.ssl-images-amazon.com/images/I/51g2xGyFCkL._AC_UL600_SR429,600_.jpg',
     age= '6-9',
     genres= [genre_2],
-    user = admin,
+    user = becky,
     read = 'https://www.google.co.uk/books/edition/Fox_in_Socks/5fY9DwAAQBAJ?hl=en&gbpv=1'
   )
-  the_lorex = Book(
+
+  the_lorex = Book (
     title= 'The Lorax',
     author= 'Dr Seuss',
     description= 'Twelve-year-old Ted lives in a place virtually devoid of nature; no flowers or trees grow in the town of Thneedville. Ted would very much like to win the heart of Audrey, the girl of his dreams, but to do this, he must find that which she most desires: a Truffula tree. To get it, Ted delves into the story of the Lorax, once the gruff guardian of the forest, and the Once-ler, who let greed overtake his respect for nature.',
@@ -169,49 +188,52 @@ with app.app_context():
     user = admin,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  horton_hears_a_who = Book(
+
+  horton_hears_a_who = Book (
     title= 'Horton Hears a Who!',
     author= 'Dr Seuss',
     description= 'elephant Horton finds a speck of dust floating in the Jungle of Nool. Upon investigation of the speck, Horton discovers the tiny city of Who-ville and its residents, the Whos, which he can hear but cannot see. Horton forms a friendship with the mayor of Who-ville, Ned McDodd, and promises to transport Who-ville to safety. However, Horton encounters opposition from his jungle neighbors, who dont want to believe in the existence of Who-ville.',
     image= 'https://cdn.waterstones.com/bookjackets/large/9780/0074/9780007455942.jpg',
     age= '6-9',
     genres= [genre_2],
-    user = admin,
+    user = becky,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  hop_on_pop = Book(
+
+  hop_on_pop = Book (
     title= 'Hop on Pop',
     author= 'Dr Seuss',
     description= 'As the tagline states this is “The Simplest Seuss for the Youngest Use.” On each page there are a few words in full caps. This highlights what words are important. These words are then used in a short simple sentence on the same page so children can see how they’re used. ',
     image= 'https://images-na.ssl-images-amazon.com/images/I/5138vQtt2TL._SX354_BO1,204,203,200_.jpg',
     age= '1-3',
     genres= [genre_2],
-    user = admin,
+    user = james,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
 
-  abc = Book(
+  abc = Book (
     title= 'Dr. Seuss ABC',
     author= 'Dr Seuss',
     description= 'Dr. Seuss ABC is a 1963 childrens A to Z alphabetical picture book by Dr. Seuss. It was published as part of the Random House Beginner Books series. It contains several short poems about a variety of characters, and is designed to introduce basic alphabet book concepts to children. ',
     image= 'https://cdn.waterstones.com/bookjackets/large/9780/0074/9780007487752.jpg',
     age= '1-3',
     genres= [genre_2],
-    user = admin,
+    user = james,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
 
-  charlie_and_the_chocolate_factory = Book(
+  charlie_and_the_chocolate_factory = Book (
     title= 'Charlie and the Chocolate Factory',
     author= 'Roald Dahl',
     description= ' A young boy wins a tour through the most magnificent chocolate factory in the world, led by the worlds most unusual candy maker. When Willy Wonka decides to let five children into his chocolate factory, he decides to release five golden tickets in five separate chocolate bars, causing complete mayhem.',
     image= 'https://m.media-amazon.com/images/I/51gjXL3FldL.jpg',
     age= '6-9',
     genres= [genre_2, genre_5],
-    user= admin,
+    user= james,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  matilda = Book(
+
+  matilda = Book (
     title= 'Matilda',
     author= 'Roald Dahl',
     description= 'Roald Dahl work tells the story of Matilda, a gifted girl forced to put up with a crude, distant father and mother. Worse, Agatha Trunchbull, the evil principal at Matildas school, is a terrifyingly strict bully. However, when Matilda realizes she has the power of telekinesis, she begins to defend her friends from Trunchbulls wrath and fight back against her unkind parents.',
@@ -221,7 +243,8 @@ with app.app_context():
     user= admin,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  giant_peach = Book(
+
+  giant_peach = Book (
     title= 'James and the Giant Peach',
     author= 'Roald Dahl',
     description= 'Roald Dahls beloved childrens tale follows the adventures of James, an orphaned young British boy. Forced to live with his cruel aunts, James finds a way out of his bleak existence when he discovers an enormous enchanted peach. After rolling into the sea inside the buoyant fruit, James, accompanied by a crew of friendly talking insects, sets sail for New York City.',
@@ -231,7 +254,8 @@ with app.app_context():
     user= admin,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  the_bfg = Book(
+
+  the_bfg = Book (
     title= 'The BFG',
     author= 'Roald Dahl',
     description= 'Ten-year-old Sophie is in for the adventure of a lifetime when she meets the Big Friendly Giant. Naturally scared at first, the young girl soon realizes that the 24-foot behemoth is actually quite gentle and charming. As their friendship grows, Sophies presence attracts the unwanted attention of Bloodbottler, Fleshlumpeater and other giants. After traveling to London, Sophie and the BFG must convince Queen Victoria to help them get rid of all the bad giants once and for all.',
@@ -241,37 +265,41 @@ with app.app_context():
     user= admin,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  the_witches = Book(
+
+  the_witches = Book (
     title= 'The Witches',
     author= 'Roald Dahl',
     description= 'While staying at a hotel in England with his grandmother, Helga, young Luke inadvertently spies on a convention of witches. The Grand High Witch reveals a plan to turn all children into mice through a magical formula. When they find that Luke has overheard, the witches test the formula on him. Now, with the help of Helga and the hotel manager, Mr. Stringer, Luke the mouse must fight back against the witches.',
     image= 'https://images-na.ssl-images-amazon.com/images/I/71Bbi-tg-mL.jpg',
     age= '6-9',
     genres= [genre_2, genre_5],
-    user= admin,
+    user= james,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  fantastic_mr_fox = Book(
+
+  fantastic_mr_fox = Book (
     title= 'Fantastic Mr Fox',
     author= 'Roald Dahl',
     description= 'After 12 years of bucolic bliss, Mr. Fox breaks a promise to his wife (Meryl Streep) and raids the farms of their human neighbors, Boggis, Bunce and Bean. Giving in to his animal instincts endangers not only his marriage but also the lives of his family and their animal friends. When the farmers force Mr. Fox and company deep underground, he has to resort to his natural craftiness to rise above the opposition.',
     image= 'https://images-na.ssl-images-amazon.com/images/I/81JPnO7wUBL.jpg',
     age= '6-9',
     genres= [genre_2, genre_5],
-    user= admin,
+    user= sagal,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  georges_marvellous_medicine = Book(
+
+  georges_marvellous_medicine = Book (
     title= 'Georges Marvellous Medicine',
     author= 'Roald Dahl',
     description= 'Georges Marvellous Medicine is a childrens book written by Roald Dahl and illustrated by Quentin Blake, first published in 1981. It is about a young boy, George, who is forced to stay with his witchlike grandmother, with a penchant for eating bugs.',
     image= 'https://images-na.ssl-images-amazon.com/images/I/91+cH46VDyL.jpg',
     age= '6-9',
     genres= [genre_2, genre_5],
-    user= admin,
+    user= becky,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  danny_the_champion_of_the_world = Book(
+
+  danny_the_champion_of_the_world = Book (
     title= 'Danny the Champion of the World',
     author= 'Roald Dahl',
     description= 'Danny, the Champion of the World is a 1975 childrens book by Roald Dahl. The plot centres on Danny, a young English boy with a big wagon, and his father, William, who live in a Gypsy caravan fixing cars for a living and partake in poaching pheasants.',
@@ -281,7 +309,8 @@ with app.app_context():
     user= admin,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  esio_trot = Book(
+
+  esio_trot = Book (
     title= 'Esio Trot',
     author= 'Roald Dahl',
     description= 'Retired bachelor Mr. Hoppy is hopelessly in love with his neighbor Mrs. Silver, but she is only interested in her pet tortoise Alfie, until Mr. Hoppy hatches an audacious plan to win her love.',
@@ -291,7 +320,8 @@ with app.app_context():
     user= admin,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  the_magic_finger = Book(
+
+  the_magic_finger = Book (
     title= 'The Magic Finger',
     author= 'Roald Dahl',
     description= 'The story is about an eight-year-old girl, whose name is never mentioned, who hates hunting, particularly from the neighbouring Gregg family. She tries to talk the Greggs out of it, but either they laugh at her, or they ignore her completely. What they dont know is that the girl has a magic finger.',
@@ -301,7 +331,8 @@ with app.app_context():
     user= admin,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  dirty_beasts = Book(
+
+  dirty_beasts = Book (
     title= 'Dirty Beasts',
     author= 'Roald Dahl',
     description= 'TThis poem tells the story of a cow called Miss Milky Daisy, who one day grows a pair of gold and silver wings. Because of this, Daisy becomes a bonafide celebrity - expect for a horrid man from Afghanistan. Because of the mans reprehensible behavior, Daisy drops whats called a cowpat on him.',
@@ -312,7 +343,7 @@ with app.app_context():
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )    
 
-  charlottes_web = Book(
+  charlottes_web = Book (
     title= 'Charlottes Web',
     author= 'E.B. White',
     description= 'Charlottes Web is about a girl named Fern, a pig named Wilbur and a spider called Charlotte. They live on a farm and Fern is horrified when she finds out that Wilbur as a piglet is to be slaughtered. She rescues Wilbur only then to have him sent away from her to her uncles farm where he is friendless and snubbed by the other animals except Charlotte, a spider, and this is where Wilburs adventures begin.',
@@ -322,7 +353,7 @@ with app.app_context():
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
 
-  harry_potter_stone = Book(
+  harry_potter_stone = Book (
     title= 'Harry Potter and the Philosophers Stone',
     author= 'J. K. Rowling',
     description= 'When mysterious letters start arriving on his doorstep, Harry Potter has never heard of Hogwarts School of Witchcraft and Wizardry. ... Then, on Harrys eleventh birthday, a strange man bursts in with some important news: Harry Potter is a wizard and has been awarded a place to study at Hogwarts.',
@@ -332,7 +363,8 @@ with app.app_context():
     user = admin,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  harry_potter_secrets = Book(
+
+  harry_potter_secrets = Book (
     title= 'Harry Potter and the Chamber of Secrets',
     author= 'J. K. Rowling',
     description= 'A house-elf warns Harry against returning to Hogwarts, but he decides to ignore it. When students and creatures at the school begin to get petrified, Harry finds himself surrounded in mystery.',
@@ -342,7 +374,8 @@ with app.app_context():
     user = admin,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  harry_potter_azkaban = Book(
+
+  harry_potter_azkaban = Book (
     title= 'Harry Potter and the Prisoner of Azkaban',
     author= 'J. K. Rowling',
     description= 'Harry Potter, along with his best friends, Ron and Hermione, is about to start his third year at Hogwarts School of Witchcraft and Wizardry. Harry cant wait to get back to school after the summer holidays (who wouldnt if they lived with the horrible Dursleys?) But when Harry gets to Hogwarts, the atmosphere is tense. Theres an escaped mass murderer on the loose, and the sinister prison guards of Azkaban have been called in to guard the school . . .',
@@ -352,7 +385,8 @@ with app.app_context():
     user = admin,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  harry_potter_fire = Book(
+
+  harry_potter_fire = Book (
     title= 'Harry Potter and the Goblet of Fire',
     author= 'J. K. Rowling',
     description= 'When the Quidditch World Cup is disrupted by Voldemorts rampaging supporters alongside the resurrection of the terrifying Dark Mark, it is obvious to Harry Potter that, far from weakening, Voldemort is getting stronger. Back at Hogwarts for his fourth year, Harry is astonished to be chosen by the Goblet of Fire to represent the school in the Triwizard Tournament. The competition is dangerous, the tasks terrifying, and true courage is no guarantee of survival – especially when the darkest forces are on the rise.',
@@ -362,7 +396,8 @@ with app.app_context():
     user = admin,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  harry_potter_phoenix = Book(
+
+  harry_potter_phoenix = Book (
     title= 'Harry Potter and the Order of the Phoenix',
     author= 'J. K. Rowling',
     description= 'Harry Potter is furious that he has been abandoned at the Dursleys house for the summer, for he suspects that Voldemort is gathering an army, that he himself could be attacked, and that his so-called friends are keeping him in the dark. Finally rescued by wizard bodyguards, he discovers that Dumbledore is regrouping the Order of the Phoenix – a secret society first formed years ago to fight Voldemort. But the Ministry of Magic is against the Order, lies are being spread by the wizards tabloid, the Daily Prophet, and Harry fears that he may have to take on this epic battle against evil alone.',
@@ -372,7 +407,8 @@ with app.app_context():
     user = admin,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  harry_potter_prince = Book(
+
+  harry_potter_prince = Book (
     title= 'Harry Potter and the Half-Blood Prince ',
     author= 'J. K. Rowling',
     description= 'Suspicion and fear blow through the wizarding world as news of the Dark Lords attack on the Ministry of Magic spreads. Harry has not told anyone about the future predicted by the prophecy in the Department of Mysteries, nor how deeply what happened to Sirius Black affected him. Hes desperate for Professor Dumbledore to arrive and take him away from the Dursleys – but Hogwarts may not be the safe haven from Voldemorts Dark Forces that it once was. In his sixth year, the names Black, Malfoy, Lestrange and Snape will haunt Harry with shades of trust and treachery as he discovers the secret behind the mysterious Half-Blood Prince – and Dumbledore prepares him to face his own terrifying destiny.',
@@ -382,7 +418,8 @@ with app.app_context():
     user = admin,
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
-  harry_potter_hallows = Book(
+
+  harry_potter_hallows = Book (
     title= 'Harry Potter and the Deathly Hallows ',
     author= 'J. K. Rowling',
     description= 'Harry Potter is preparing to leave the Dursleys and Privet Drive for the last time. But the future that awaits him is full of danger, not only for him, but for anyone close to him – and Harry has already lost so much. Only by destroying Voldemorts remaining Horcruxes can Harry free himself and overcome the Dark Lords forces of evil. In this dramatic conclusion to the Harry Potter series, Harry must leave his most loyal friends behind, and in a final perilous journey find the strength and the will to face his terrifying destiny: a deadly confrontation that is his alone to fight.',
@@ -393,7 +430,7 @@ with app.app_context():
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'
   )
 
-  the_tiger_came_to_tea = Book(
+  the_tiger_came_to_tea = Book (
     title= 'The Tiger Who Came To Tea',
     author= 'Judith Kerr',
     description= 'The childrens classic, written in 1968 by Judith Kerr, tells the story of a young girl named Sophie, who has to stay home with her mum because its too rainy to go to the park. Fortunately, the day takes an interesting turn when a hungry tiger turns up at the door and asks if he can join Sophie and her mother for tea.',
@@ -404,8 +441,7 @@ with app.app_context():
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'   
   )
 
-
-  the_gruffalo = Book(
+  the_gruffalo = Book (
     title= 'The Gruffalo',
     author= 'Julia Donaldson',
     description= 'A rhyming story about a clever little mouse and a monster. When mouse goes for a walk in a dangerous forest, he invents tales of a fantastic creature called a Gruffalo to scare off his enemies. Imagine his surprise when he meets a real Gruffalo!',
@@ -416,7 +452,7 @@ with app.app_context():
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'    
   )
 
-  the_hungry_caterpillar = Book(
+  the_hungry_caterpillar = Book (
     title= 'The Very Hungry Caterpillar',
     author= 'Eric Carle',
     description= 'The Very Hungry Caterpillar—in which a caterpillar hatches out of an egg on a Sunday, proceeds to eat vibrantly colored fruits it finds in escalating quantities from Monday to Friday, goes on a junk-food-eating rampage on Saturday, eats a nice green leaf on Sunday, and then nestles into a cocoon for two weeks and emerges a beautiful butterfly',
@@ -427,7 +463,7 @@ with app.app_context():
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'  
   )
 
-  twits = Book(
+  twits = Book (
     title= 'The Twits',
     author= 'Roald Dahl',
     description= 'The Twits, who are retired circus trainers, are trying to create the first upside-down monkey circus, leaving the monkeys to stand on their heads for hours on end. If they fail to do what Mr. Twit says, Mrs. Twit beats them with her cane.',
@@ -438,7 +474,7 @@ with app.app_context():
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'    
   )
 
-  codename_bananas = Book(
+  codename_bananas = Book (
     title= 'Codename Bananas',
     author= 'David Walliams',
     description= 'Code Name Bananas is a whizz-bang epic action adventure for all the family! 1940. Britain is at war with Germany. As bombs rain down on the city, orphan boy Eric forms an extraordinary friendship with a remarkable gorilla: Gertrude.',
@@ -449,7 +485,7 @@ with app.app_context():
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'    
   )
 
-  stick_man = Book(
+  stick_man = Book (
     title= 'Stick Man',
     author= 'Julia Donaldson',
     description= 'Stick Man written by former Childrens Laureate, Julia Donaldson, and illustrated by Axel Scheffler is a childrens story about an anthropomorphic wooden stick who becomes separated from his family home and his Odyssey-like adventure to return there.',
@@ -460,18 +496,58 @@ with app.app_context():
     read = 'https://books.google.co.uk/books?id=b-lRmjtzd3MC&printsec=frontcover&dq=The+Story+of+Tracy+Beaker&hl=en&sa=X&ved=2ahUKEwiuwYzdwcDtAhVipHEKHdcoBLsQ6wEwAHoECAMQAQ#v=onepage&q=The%20Story%20of%20Tracy%20Beaker&f=false'  
   )
 
-
   print('Books created')
 
-  comment1 = Comment(
-    content = 'This book is fun to read, My little ones love it',
-    book=the_hungry_caterpillar,
+  comment1 = Comment (
+    content = 'This book is fun to read, my little ones love it',
+    book = the_hungry_caterpillar,
     user = admin
+  )
+
+  comment2 = Comment (
+    content = 'We absolutely love this book!',
+    book = hetty_feather,
+    user = sagal
+  )
+
+  comment3 = Comment (
+    content = 'The pictures in this book are amazing!',
+    book = tracy_beaker2,
+    user = becky
+  )
+
+  comment4 = Comment (
+    content = 'We read this book again and again!',
+    book = the_gruffalo,
+    user = james
+  )
+
+  comment5 = Comment (
+    content = 'We read this book again and again!',
+    book = giant_peach,
+    user = admin
+  )
+
+  comment6 = Comment (
+    content = 'We read this book again and again!',
+    book = harry_potter_prince,
+    user = sagal
+  )
+
+  comment7 = Comment (
+    content = 'We read this book again and again!',
+    book = georges_marvellous_medicine,
+    user = becky
+  )
+
+  comment8 = Comment (
+    content = 'We read this book again and again!',
+    book = one_fish_two_fish,
+    user = james
   )
 
   print('Comment created') 
   print('Adding to database')
-
 
   db.session.add(the_hungry_caterpillar)
   db.session.add(charlie_and_the_chocolate_factory)
@@ -513,6 +589,9 @@ with app.app_context():
   db.session.add(codename_bananas)
   db.session.add(stick_man)
   db.session.add(comment1)
+  db.session.add(comment2)
+  db.session.add(comment3)
+  db.session.add(comment4)
   db.session.add(genre_1)
   db.session.add(genre_2)
   db.session.add(genre_3)
