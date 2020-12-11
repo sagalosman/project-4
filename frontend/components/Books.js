@@ -30,7 +30,7 @@ const Books = (props) => {
       {books.map((book, index) => {
         return <div className="column is-one-third-desktop is-half-tablet is-half-mobile"
           key={index}>
-          <Link to={`/books/${book.id}`} >
+          <Link to={{ pathname: `/books/${book.id}`, state: { book } }} >
             <section class="cards">
               <article class="card card--2">
                 {/* <div class="card__info-hover"> */}
