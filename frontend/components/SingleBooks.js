@@ -162,7 +162,8 @@ const SingleBook = (props) => {
           </textarea>
         {/* </div> */}
         <button
-          style={{ backgroundColor: 'yellow', height: '40px', fontSize: '20px' }}
+          className="buttonsl"
+          // style={{ backgroundColor: 'yellow', height: '40px', fontSize: '20px' }}
           onClick={() => handleComment(bookId)}> Submit Your Comment
         </button>
       {/* </div> */}

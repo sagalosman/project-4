@@ -23,52 +23,8 @@ const Books = (props) => {
 
   console.log(books)
 
-<<<<<<< HEAD
-
-    
-  const searchFunction = (title) => {
-    if (title) {
-      axios.get(`/api/books/${title}`)
-        .then(resp => {
-  
-          const bookId = resp.data.id
-          console.log(bookId)
-          updateBookData(resp.data)
-
-          console.log(resp.data)
-          props.history.push(`/books/${bookId}`)
-        })
-    }
-  }
-
-
-  useEffect(() => {
-    return searchFunction(title)
-  }, [title])
-
-
-  function enterKey(event) {
-    if (event.key === 'Enter') {
-      updateTitle(words)
-    }
-  }
-
-return <div className = "section">
-  <form onsubmit="event.preventDefault();" role="search">
-  
-  <input id="search" type="search" className='input1'
-      placeholder="Enter the book name ..." required
-      onChange = {(event) => updateWords(event.target.value)}
-      value = {words}
-      onKeyPress = {enterKey}
-    />
-     <button className='searchbtn' onClick={enterKey} type="submit">Go</button> 
-    </form>
-​
-=======
   return <div className="section">
 
->>>>>>> 088948b57c3200aa672e2db2eb383e8cdf439124
     {/* <h2> Books Page</h2> */}
     <div className="columns is-multiline is-mobile">
       {books.map((book, index) => {
