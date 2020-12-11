@@ -347,13 +347,3 @@ def like_create(book_id):
 #   like.remove()
 #   return { 'message': f'Like {like_id} --deleted successfully '}, 200
 
-# router.route('/events/:eventId/likes/remove')
-#   .put(secureRoute, eventController.removeLike)
-
-# router.route('/events/:eventId/likes/add')
-#   .put(secureRoute, eventController.addLike)
-
-<<<<<<< HEAD
-=======
-
->>>>>>> sagal
