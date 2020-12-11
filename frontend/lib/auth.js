@@ -1,4 +1,4 @@
-export function getUserId(){
+export function getUserId() {
   const token = localStorage.getItem('token')
   if (!token) return false
 

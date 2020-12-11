@@ -44,7 +44,7 @@ const UserProfile = (props) => {
     </div>
   }
 
-  return <section style={{ marginLeft: '40px'}}>
+  return <section style={{ marginLeft: '40px' }}>
     <div>
       <h2> hello</h2>
       <h2>Welcome {user.name} !</h2>
@@ -54,7 +54,7 @@ const UserProfile = (props) => {
     <div>
       {userBooks.books && userBooks.books.map((book,index) => {
         return <div key={index}  >
-          <div style={{ marginTop: '100px'}} className= "card" >
+          <div style={{ marginTop: '100px' }} className= "card" >
             <img src={book.image}  alt={book.title} style={{ height: '40%', width: '40%' }} />
             <h2 style={{ fontSize: '24px' }}>{book.title} </h2>
             <p style={{ fontSize: '14px' }} >{book.author} </p>
