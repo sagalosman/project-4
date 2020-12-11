@@ -1,17 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { isCreator } from '../lib/auth'
+import { getUserId, isCreator } from '../lib/auth'
 import Bulma from 'bulma'
 
 
 const SingleBook = (props) => {
+  console.log(props)
+
+  const bookData = props.location.state.book
+  console.log(bookData)
+  const bookId = props.match.params.bookId
+  // console.log(bookId)
+
   const token = localStorage.getItem('token')
 
-  const bookId = props.match.params.bookId
-  console.log(bookId)
   const [book, updateBook] = useState({})
-  const [text, setText] = useState('')
+  const [content, setContent] = useState('')
   const [messages, updateMessages] = useState([])
+  // const [formData, updateFormData] = useState([ {
+  //   title: `${bookData.title}`,
+  //   author: `${bookData.author}`,
+  //   description: `${bookData.description}`,
+  //   image: `${bookData.image}`,
+  //   age: `${bookData.age}`,
+  //   read: `${bookData.read}` 
+  
+  // }])
 
   // ! A function to reload the page
 
@@ -27,22 +41,46 @@ const SingleBook = (props) => {
       })
   }, [])
 
+
   function handleComment(bookId) {
-    axios.post(`/api/books/${bookId}/comments`, { text }, {
+    axios.post(`/api/books/${bookId}/comments`, { content }, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
-        setText('')
+        setContent('')
 
         // updateBook(resp.data)
         updateMessages(resp.data)
       })
-    // refreshPage()
+    refreshPage()
   }
 
   console.log(messages)
 
+  //! NOT WORKING ******** Function to handle adding books to 'my account page' ************
 
+  // function handleChangeCreateBook(event){
+  //   const data = {
+  //     ...formData,
+  //     [event.target.name]: event.target.value
+  //   }
+  //   updateFormData(data)
+  // }
+
+  // function handleCreateBook(event) {
+  //   // event.preventDefault()
+  //   // const token = localStorage.getItem('token')
+  //   console.log(token)
+  //   axios.post('/api/books', formData, {
+  //     headers: { Authorization: `Bearer ${token}` }
+  //   })
+  //   console.log('i am log in')
+  //     .then((resp) => {
+  //       console.log('i am about to push')
+  //       props.history.push(`/api/user/${getUserId()}`)
+  //       console.log('pushing complete')
+  //     })
+  // }
 
 
   console.log(book)
@@ -89,7 +127,14 @@ const SingleBook = (props) => {
           <h2 className='h1' >{book.author}</h2>
 
           <p>{book.description}</p>
-          <button className="readmore"><a href={book.read}> Read More </a></button>
+          <button className="readmore" style={{ marginLeft: '10%'}}><a href={book.read}> Read More </a></button>
+          <button 
+            className="readmore" 
+            style={{ marginLeft: '10%', backgroundColor: 'turquoise' }}
+            // onClick={() => handleCreateBook()}
+          >
+            Add Book 
+          </button>
           {/* COMMENTS */}
           <h2 style={{ fontSize: '24px', fontWeight: 'bolder', textDecorationLine: 'underline' }} > COMMENTS </h2>
           {book.comments && book.comments.map((comment, index) => {
@@ -105,21 +150,23 @@ const SingleBook = (props) => {
       {/* </div> */}
       {/* </div> */}
       {/* </div> */}
-      <div className="one-event-comments">
-        <div className="add-comment">
+      {/* <div className="one-event-comments"> */}
+        {/* <div className="add-comment"> */}
           <textarea
             className="textarea"
             placeholder="Add a comment..."
-            value={text[book.id]}
+            onChange={event => setContent(event.target.value)}
+            value={content[book._id]}
             name="content"
           >
           </textarea>
-        </div>
+        {/* </div> */}
         <button
-          style={{ backgroundColor: 'yellow', height: '40px', fontSize: '20px' }}
+          className="buttonsl"
+          // style={{ backgroundColor: 'yellow', height: '40px', fontSize: '20px' }}
           onClick={() => handleComment(bookId)}> Submit Your Comment
         </button>
-      </div>
+      {/* </div> */}
       {/* <div class="column-xs-12 column-md-5"> */}
     </div>
 
