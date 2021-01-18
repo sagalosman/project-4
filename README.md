@@ -2,7 +2,7 @@
 
 This was our final project at the General Assembly Software Engineering Immersive course. For this project I was in a group of three we had to create a full stack app using the things we learnt for the past few weeks. The project required my team member to create an API with Python and Flask, using a Flask REST framework to serve our data from a Postgres database. We built a separate frontend using React, and deployed the website online.
 
-
+You can view my project live here ---> https://poppinsbook.herokuapp.com/
 
 
 # Brief
@@ -42,7 +42,11 @@ We also decided the user would likely want to sort the books by age category and
 A neat feature was to include a link to Google Books, which displays the first few pages of each book. This was included through an API, with a button appearing under each book that invites the user to ‘read more’.
 
 We looked at some stretch goals as well, and this included introducing an external API so that we would have a large number of books in the library. And we considered a rating system where books could be marked out of five or ten.
+# Backend
 
+For this website, we use our own API that we created. I mainly did the seeding file for the project and got the book information, description and images from the internet. Here is a screenshot of the seed.py page.
+
+![](seed.png)
 
 # The Frontend
 
@@ -68,7 +72,7 @@ Here is the some of the code for the Single Page:
 
 ![](singlec.png)
 
-# Lessons Learned
+# Challenges + Lessons Learned
 
 We learned a lot more about working together to create a finished product. It wasn't too difficult to break down the project into parts that each of us could handle, but this project meant by its design that we would always work in the same files and this generated a few conflicts that we had to think about before we could choose which choice we wanted to hold.
 
