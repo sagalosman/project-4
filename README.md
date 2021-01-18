@@ -46,7 +46,7 @@ We looked at some stretch goals as well, and this included introducing an extern
 
 For this website, we use our own API that we created. I mainly did the seeding file for the project and got the book information, description and images from the internet. Here is a screenshot of the seed.py page.
 
-![](seed.png)
+![](seed-1.png)
 
 # The Frontend
 
